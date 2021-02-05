@@ -1,0 +1,35 @@
+@import url("https://use.typekit.net/vyy7lze.css");
+/* line 3, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/base/_global.scss */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 8, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/base/_global.scss */
+body, html {
+  font-family: grenadine-mvb,  sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  overflow-y: hidden;
+}
+
+/* line 1, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/componets/_hero.scss */
+.hero {
+  display: block;
+  background-color: #1B4332;
+  color: white;
+}
+
+/* line 6, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/componets/_hero.scss */
+.hero__wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+}
+
+/*# sourceMappingURL=style.css.map */

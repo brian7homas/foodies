@@ -1,0 +1,15 @@
+.hero{
+    display:block;
+    background-color: #1B4332;
+    color:white;
+    
+    &__wrapper{
+        height: 100vh;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 100;
+    }
+}

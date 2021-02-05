@@ -1,0 +1,13 @@
+@import './type.scss';
+@import './variables.scss';
+    *{
+        box-sizing:border-box;
+        margin:0;
+        padding:0;
+    }
+    body, html{
+        font-family: grenadine-mvb,  sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        overflow-y: hidden;
+    }
