@@ -1,4 +1,9 @@
 .page{
     position:relative;
     z-index: -1;
+    height: 50vh;
+    &__wrapper{
+        height: 50vh;
+        background-color: $color-primary-4;
+    }
 }
