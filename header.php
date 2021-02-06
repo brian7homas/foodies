@@ -7,16 +7,37 @@
     <meta name="description" content="Add and sort all of your favorite recipes">
     <?php wp_head(); ?>
   </head>
-  <body <?php body_class(); ?>>
-  <header class="header">
+  <body  <?php body_class(); ?>>
+  
+  
+  <header data-barba="wrapper" class="header">
+    <div class="search-bar">
+      <input class="search-bar__input" />
+      <span class="search-bar__btn">
+        <i class="icon-basic-magnifier"></i>
+      </span>
+    </div>
+    <div class="nav-toggle">
+      <button class="btn__nav">Menu</button>
+    </div>
+    
     <div class="header__wrapper">
         <nav class="nav-menu">
           <ul class="nav-menu__wrapper">
-            <li class="nav-menu__item"><a>All Recipes</a><li>
-            <li class="nav-menu__item"><a>Keto Recipes</a><li>
-            <li class="nav-menu__item"><a>Normal Recipes</a><li>
-            <li class="nav-menu__item"><a>Low Carb Recipes</a><li>
+            <a href="<?php echo site_url('/recipes')?>" class="nav-menu__item">
+              <li>All Recipes</li>
+            </a>
+            <a href="<?php echo site_url('/keto-recipes')?>" class="nav-menu__item">
+              <li>Keto Recipes</li>
+            </a>
+            <a href="<?php echo site_url('/low-carb-recipes')?>" class="nav-menu__item">
+              <li>Low Carb Recipes</li>
+            </a>
+            <a href="<?php echo site_url('/')?>" class="nav-menu__item">
+              <li>Home</li>
+            </a>
           </ul>
         </nav>
     </div>
   </header>
+  

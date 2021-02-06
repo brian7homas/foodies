@@ -1,16 +1,17 @@
 <?php
-get_header();
 $id=get_the_ID();
+get_header();
 ?>
 
-<div class="hero">
-    <div class="hero__wrapper">
+<div class="hero"  data-barba="container" data-barba-namespace="hero" >
+    <div class="hero__wrapper" >
         <h1>Recipes</h1>
     </div>
 </div>
 
 
 <?php
-echo $id;
 get_footer();
+
+
 ?>

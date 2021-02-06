@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "nav-toggle.css",
+	"sources": [
+		"../scss/componets/nav-toggle.scss",
+		"../scss/base/_variables.scss"
+	],
+	"sourcesContent": [
+		"@import '../base/variables';\n.nav-toggle{\n    display: inline-block;\n    position: fixed;\n    top: 4em;\n    right: 0;\n    padding-right: 1em;\n    \n    \n}\n",
+		"$font-main: grenadine-mvb;\n$font-secondary: degular;\n\n\n//colors\n$color-black: #000;\n$color-white: #eee;\n$color-primary:#1B4332;\n$color-primary-1: rgba(27, 67, 50, 1);\n$color-primary-2: rgba(45, 106, 79, 1);\n$color-primary-3: rgba(64, 145, 108, 1);\n$color-primary-4: rgba(82, 183, 136, 1);"
+	],
+	"names": [],
+	"mappings": ";AACA,AAAA,WAAW,CAAA;EACP,OAAO,EAAE,YAAY;EACrB,QAAQ,EAAE,KAAK;EACf,GAAG,EAAE,GAAG;EACR,KAAK,EAAE,CAAC;EACR,aAAa,EAAE,GAAG,GAGrB"
+}

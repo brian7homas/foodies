@@ -1,35 +1,158 @@
 @import url("https://use.typekit.net/vyy7lze.css");
-/* line 3, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/base/_global.scss */
+/* line 1, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/base/_global.scss */
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
-/* line 8, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/base/_global.scss */
+/* line 6, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/base/_global.scss */
 body, html {
   font-family: grenadine-mvb,  sans-serif;
   font-weight: 400;
   font-style: normal;
-  overflow-y: hidden;
-}
+  overflow-y: hidden; }
+
+/* line 2, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/layout/_search-bar.scss */
+.search-bar {
+  width: 100vw;
+  background-color: green;
+  position: fixed;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: .5em 0 0 0;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  top: -10em;
+  z-index: 400;
+  justify-content: space-between; }
+  /* line 15, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/layout/_search-bar.scss */
+  .search-bar input {
+    margin-left: 1.4em;
+    margin-bottom: 1em;
+    min-width: 75%;
+    height: 2rem;
+    border-radius: 10px; }
+  /* line 25, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/layout/_search-bar.scss */
+  .search-bar span {
+    position: fixed;
+    right: -.1em;
+    transform: scale(1.4);
+    top: 1rem;
+    padding-right: 1.2em;
+    z-index: 3; }
+  /* line 34, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/layout/_search-bar.scss */
+  .search-bar i {
+    font-size: 1.4rem;
+    background-image: linear-gradient(to right, #52b788, #eee);
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent; }
+
+/* line 4, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/componets/_btn.scss */
+.btn__nav {
+  border-color: transparent;
+  background-color: #52b788;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 40px;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+  color: #eee; }
 
 /* line 1, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/componets/_hero.scss */
 .hero {
   display: block;
-  background-color: #1B4332;
+  background-color: #52b788;
   color: white;
-}
-
-/* line 6, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/componets/_hero.scss */
-.hero__wrapper {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   position: relative;
-  z-index: 100;
-}
+  z-index: -1; }
+  /* line 7, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/componets/_hero.scss */
+  .hero__wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+  /* line 14, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/componets/_hero.scss */
+  .hero h1 {
+    font-weight: 300; }
+
+/* line 1, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/componets/_header.scss */
+.header {
+  background-color: transparent;
+  display: block;
+  height: 100%;
+  position: fixed;
+  bottom: 0; }
+
+/* line 1, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/componets/_nav-menu.scss */
+.nav-menu {
+  position: absolute;
+  z-index: 1;
+  height: 30vh;
+  bottom: -11em; }
+  /* line 6, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/componets/_nav-menu.scss */
+  .nav-menu__wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100vw;
+    overflow: visible; }
+  /* line 16, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/componets/_nav-menu.scss */
+  .nav-menu a {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    font-size: 1.2rem;
+    position: relative;
+    text-decoration: none; }
+    /* line 24, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/componets/_nav-menu.scss */
+    .nav-menu a:nth-child(1) {
+      background-color: #1B4332;
+      border-width: 5px;
+      z-index: 2;
+      height: 50vh;
+      bottom: 0; }
+    /* line 32, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/componets/_nav-menu.scss */
+    .nav-menu a:nth-child(2) {
+      background-color: #40916c;
+      border-width: 5px;
+      z-index: 3;
+      height: 40vh;
+      bottom: 0;
+      top: -12em; }
+    /* line 41, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/componets/_nav-menu.scss */
+    .nav-menu a:nth-child(3) {
+      background-color: #2d6a4f;
+      border-width: 5px;
+      z-index: 4;
+      height: 50vh;
+      top: -21em; }
+    /* line 50, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/componets/_nav-menu.scss */
+    .nav-menu a:nth-child(4) {
+      background-color: #52b788;
+      border-width: 5px;
+      z-index: 5;
+      height: 50vh;
+      top: -33em; }
+  /* line 60, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/componets/_nav-menu.scss */
+  .nav-menu__item {
+    color: white;
+    display: block;
+    padding: 8px 15px;
+    height: 3rem;
+    position: relative; }
+
+/* line 2, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/componets/_nav-toggle.scss */
+.nav-toggle {
+  display: inline-block;
+  position: fixed;
+  top: 4em;
+  right: 0;
+  padding-right: 1em; }
+
+/* line 1, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/pages/_page.scss */
+.page {
+  position: relative;
+  z-index: -1; }
 
 /*# sourceMappingURL=style.css.map */

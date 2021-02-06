@@ -1,3 +1,15 @@
 @import './base/global';
+@import './base/type';
+@import './base/variables';
 
-@import './componets/hero'
+@import './layout/search-bar';
+
+
+@import './componets/btn';
+@import './componets/hero';
+@import './componets/header';
+@import './componets/nav-menu';
+@import './componets/nav-toggle';
+
+
+@import './pages/page';
