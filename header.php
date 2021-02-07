@@ -7,10 +7,10 @@
     <meta name="description" content="Add and sort all of your favorite recipes">
     <?php wp_head(); ?>
   </head>
-  <body  <?php body_class(); ?>>
+  <body data-barba="wrapper" class="header" <?php body_class(); ?>>
   
   
-  <header data-barba="wrapper" class="header">
+  <header >
     <div class="search-bar">
       <input class="search-bar__input" />
       <span class="search-bar__btn">
@@ -21,8 +21,8 @@
       <button class="btn__nav">Menu</button>
     </div>
     
-    <div class="header__wrapper">
-        <nav class="nav-menu">
+    <div class="header__wrapper" >
+    <nav class="nav-menu">
           <ul class="nav-menu__wrapper">
             <a href="<?php echo site_url('/recipes')?>" class="nav-menu__item">
               <li>All Recipes</li>
