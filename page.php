@@ -1,9 +1,23 @@
 <?php 
 get_header();
 ?>
-<div class="page"  data-barba="container" data-barba-namespace="recipes">
-    <div class="page__wrapper" >
-        <h1><?php echo wp_get_post_parent_id( get_the_ID() ) ?></h1>
+
+<div class="page"  >
+    <div class="page__wrapper" data-barba="container" data-barba-namespace="page" >
+        <p>page</p>
+        <!-- <nav class="nav-menu">
+            <ul class="nav-menu__wrapper">
+                <a href="<?php echo site_url('/keto-recipes')?>" class="nav-menu__item">
+                <li>Keto Recipes</li>
+                </a>
+                <a href="<?php echo site_url('/low-carb-recipes')?>" class="nav-menu__item">
+                <li>Low Carb Recipes</li>
+                </a>
+                <a href="<?php echo site_url('/')?>" class="nav-menu__item">
+                <li>Home</li>
+                </a>
+            </ul>
+        </nav> -->
         <?php
             while(have_posts()){
                 $is_parant = wp_get_post_parent_id( get_the_ID() );

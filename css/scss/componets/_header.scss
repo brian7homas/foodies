@@ -4,4 +4,9 @@
     height: 100%;
     position:fixed;
     bottom: 0;
+    z-index: 3;
+}
+header{
+    position:relative;
+    z-index: 3;
 }

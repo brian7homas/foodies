@@ -13,8 +13,8 @@ function main_theme_files(){
       } else {
         //echo "not f-u.local";
         wp_enqueue_script('our-vendors-js', get_theme_file_uri('/bundled-assets/undefined'), NULL, '1.1', true);
-        wp_enqueue_script('main-js', get_theme_file_uri('/bundled-assets/scripts.ad57cebc3bf4c995ae03.js'), NULL, '1.0', true);
-        wp_enqueue_style('our-main-styles', get_theme_file_uri('/bundled-assets/styles.ad57cebc3bf4c995ae03.css'));
+        wp_enqueue_script('main-js', get_theme_file_uri('/bundled-assets/scripts.1ed1cfb08ae6d25bccd6.js'), NULL, '1.0', true);
+        wp_enqueue_style('our-main-styles', get_theme_file_uri('/bundled-assets/styles.1ed1cfb08ae6d25bccd6.css'));
       }
 }
 
