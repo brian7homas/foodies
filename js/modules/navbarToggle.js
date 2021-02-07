@@ -30,21 +30,14 @@ class navbarToggle{
             document.querySelector('body').removeEventListener("click", ()=>this.menuToggle())
     }
     menuToggle(){
-        // if(this.toggle.reversed()){
-        //     this.toggle.play()
-        //     this.pageContainer.classList.add('current')
-        // }else{
-        //     this.toggle.reverse()
-        //     this.pageContainer.classList.remove('current')
-        // }
-         this.toggle.reversed()?this.toggle.play():this.toggle.reverse()
+        this.toggle.reversed()?this.toggle.play():this.toggle.reverse()
         
         //GSAP SNIPPET ADDING/REMOVING EVENT TO BODY -- DOES NOT WORK
         // onComplete: ()=>!this.bodyEventadd()?this.bodyEventremove():this.bodyEventadd()
     }
     slideUp(){
-        this.toggle.to(this.navContainer, .3,{duration: .1, bottom:'-16em', })
-                    .from('.nav-menu__item', { duration: .3, stagger: .2}, "<")
+        this.toggle.to(this.navContainer,{duration: .3, yPercent: 100,bottom:'-22em', })
+                    .from('.nav-menu__item', { duration: .3, yPercent: 100,  stagger: .2}, "<")
     }
     
 }

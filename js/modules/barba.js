@@ -6,7 +6,7 @@ const animateIn = (container) =>{
   return tl.from(container, { duration: 1,   yPercent: 100})
 }
 const animateOut = (container, done) =>{
-  return tl.to(container, { duration: 1, yPercent:100, onComplete: ()=>done()})
+  return tl.to(container, { duration: 1, yPercent:100,onComplete: ()=>done() })
 }
 
 barba.init({

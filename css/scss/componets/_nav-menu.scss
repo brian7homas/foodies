@@ -4,7 +4,7 @@
     // display:none;
     // height: 30vh;
     // bottom:5em;
-    bottom:-31em;
+    bottom:-33em;
     &__wrapper{
         
         display: flex;
@@ -29,35 +29,37 @@
             background-color: $color-primary-4;
             border-width: 5px;
             z-index: 2;
-            height:20vh;
-            bottom:-10em;
+//            height:100vh;
+            bottom:-7em;
         }
         // KETO RECIPES
         &:nth-child(2){
             background-color: $color-primary-3;
             border-width: 5px;
             z-index: 3;
-            height:10vh;
-            bottom:0;
-            top:7em;
+            //height:100vh;
+            bottom:-10em;
+            // top:7em;
         }       
         // LOW CARB RECIPES
         &:nth-child(3){
             background-color: $color-primary-2;
             border-width: 5px;
             z-index: 4;
-            height:100vh;
+            //height:100vh;
             top: 10em;
             transform-origin: bottom;
             
         }
         // HOME
         &:nth-child(4){
-            background-color: $color-primary-4;
+            background-color: $color-primary;
             border-width: 5px;
             z-index: 4;
-            height:100vh;
+            //height:100vh;
             top: 13em;
+            
+            
             
         }
     }
@@ -72,4 +74,7 @@
         
         
     }
+}
+.current{
+    color: red;
 }
