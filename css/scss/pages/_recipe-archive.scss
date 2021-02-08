@@ -1,0 +1,26 @@
+.recipe-archive{
+    display:block;
+    color:white;
+    z-index: -1;
+    &__wrapper{    
+        height: 100%;
+        background-color: $color-primary-4;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        max-width: 100vw;
+    }
+    
+    p{
+        color:purple;
+    }
+    img{
+        max-width:100%
+    }
+    h1{
+        color:yellow;
+    }
+    h3{
+        color:red;
+        text-align: center;
+    }
+}

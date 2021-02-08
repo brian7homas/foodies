@@ -6,10 +6,12 @@
 
 
 @import './componets/btn';
-@import './componets/hero';
+
 @import './componets/header';
 @import './componets/nav-menu';
 @import './componets/nav-toggle';
+@import './componets/recipe-item';
 
-
+@import './pages/hero';
 @import './pages/page';
+@import './pages/recipe-archive';

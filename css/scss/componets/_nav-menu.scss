@@ -1,10 +1,12 @@
 .nav-menu{
-    // position: absolute;
+    
+    position: fixed;
     z-index: 1;
+    bottom:0;
     // display:none;
     // height: 30vh;
-    top:0em;
-    position:relative;
+    // top:0em;
+    // position:relative;
     // bottom:-33em;
     &__wrapper{
         
