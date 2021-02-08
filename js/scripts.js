@@ -1,9 +1,10 @@
 import '../css/style.css'
 
 import barba from './modules/barba'
+import navBarEvents from './modules/navBarEvents'
 import navbarToggle from './modules/navbarToggle'
 import searchToggle from './modules/searchToggle'
-import navBarEvents from './modules/navBarEvents'
+
 
 
 

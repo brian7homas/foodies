@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "recipe-archive.css",
+	"sources": [
+		"../scss/pages/recipe-archive.scss"
+	],
+	"sourcesContent": [
+		".recipe-archive{\n    overflow-y: scroll;\n    z-index: 5;\n    &__wrapper{\n        \n    }\n    img{\n        max-width:10%\n    }\n    h1{\n        color:green;\n    }\n}"
+	],
+	"names": [],
+	"mappings": ";AAAA,AAAA,eAAe,CAAA;EACX,UAAU,EAAE,MAAM;EAClB,OAAO,EAAE,CAAC,GAUb;;EAZD,AAMI,eANW,CAMX,GAAG,CAAA;IACC,SAAS,EAAC,GACd,GAAC;;EARL,AASI,eATW,CASX,EAAE,CAAA;IACE,KAAK,EAAC,KAAK,GACd"
+}

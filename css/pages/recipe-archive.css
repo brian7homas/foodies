@@ -1,0 +1,12 @@
+/* line 1, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/pages/recipe-archive.scss */
+.recipe-archive {
+  overflow-y: scroll;
+  z-index: 5; }
+  /* line 7, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/pages/recipe-archive.scss */
+  .recipe-archive img {
+    max-width: 10%; }
+  /* line 10, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/pages/recipe-archive.scss */
+  .recipe-archive h1 {
+    color: green; }
+
+/*# sourceMappingURL=recipe-archive.css.map */

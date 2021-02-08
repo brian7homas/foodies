@@ -1,18 +1,21 @@
 .nav-menu{
-    position: absolute;
+    
+    position: fixed;
     z-index: 1;
+    bottom:0;
     // display:none;
     // height: 30vh;
-    // bottom:5em;
-    bottom:-33em;
+    // top:0em;
+    // position:relative;
+    // bottom:-33em;
     &__wrapper{
         
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        width: 100vw;
-        overflow:visible;
-        top:0;
+        // display: flex;
+        // flex-direction: column;
+        // position: relative;
+        // width: 100vw;
+        // overflow:visible;
+        // top:0;
     }
     
     
@@ -21,7 +24,7 @@
         border-top-left-radius: 25px;
         border-top-right-radius: 25px;
         font-size: 1.2rem;
-        position: absolute; 
+        position: relative; 
         text-decoration: none;
         
         // ALL RECIPES
@@ -29,8 +32,8 @@
             background-color: $color-primary-4;
             border-width: 5px;
             z-index: 2;
-//            height:100vh;
-            bottom:-7em;
+            // height:100vh;
+            // bottom:-7em;
         }
         // KETO RECIPES
         &:nth-child(2){
@@ -38,7 +41,7 @@
             border-width: 5px;
             z-index: 3;
             //height:100vh;
-            bottom:-10em;
+            //bottom:-10em;
             // top:7em;
         }       
         // LOW CARB RECIPES
@@ -47,7 +50,7 @@
             border-width: 5px;
             z-index: 4;
             //height:100vh;
-            top: 10em;
+            //top: 10em;
             transform-origin: bottom;
             
         }
@@ -57,7 +60,7 @@
             border-width: 5px;
             z-index: 4;
             //height:100vh;
-            top: 13em;
+            //top: 13em;
             
             
             
@@ -69,12 +72,14 @@
         display:block;
         padding: 8px 15px;
         height: 3rem;
-        position: absolute;
+        // position: absolute;
         width: 100vw;
         
         
     }
 }
-.current{
+a.current{
     color: red;
+    // height: 100vh;
+    // position: fixed;
 }
