@@ -10,7 +10,13 @@ class navBarEvents{
         // console.log(this.menuItemsArray)
         this.events()
         this.current
-        
+        this.homePage = document.querySelector("a[href='/']")
+        // this.setDefaultPage()
+    }
+    setDefaultPage(){
+        window.onload = ()=>{
+            this.menuItemsArray[3].classList.add('current')
+        }
     }
     events(){
         this.menuItemsArray.forEach(element => {    

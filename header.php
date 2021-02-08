@@ -10,7 +10,7 @@
   <body data-barba="wrapper" class="header" <?php body_class(); ?>>
   
   
-  <header >
+  <header class="header">
     <div class="search-bar">
       <input class="search-bar__input" />
       <span class="search-bar__btn">
