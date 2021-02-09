@@ -6,6 +6,8 @@ class searchToggle{
         this.span = document.querySelector('.search-bar__btn')
         this.searchBar = document.querySelector('.search-bar')
         this.searchOverlay = document.querySelector('.search-overlay')
+        this.input = document.querySelector('.search-bar__input')
+        this.typingTimer
         console.log(this.searchOverlay)
         this.searchToggle = gsap.timeline({reversed:true, paused: true })
         this.toggleIn()
@@ -13,11 +15,25 @@ class searchToggle{
     }
     events(){
         this.span.addEventListener("click", ()=>this.searching())
+        
         //s key to open search and overlay
         document.addEventListener("keydown", (e)=>this.keyDown(e))
         //esc key to close search and overlay
         document.addEventListener("keydown", (e)=>this.closeSearch(e))
+        
+        this.input.addEventListener("keydown", ()=>this.typingLogic())
     }
+    typingLogic(){
+        //  wait for typing
+        clearTimeout(this.typingTimer) //reset the timer
+        // give timer a name to access
+        this.typingTimer = setTimeout(()=>{
+            // this is the request to wp server
+            console.log("timeout")
+        },2000)
+    }
+    
+    
     //METHODS
     keyDown(e){
         if(e.keyCode == 83 && this.searchToggle.reversed()){
@@ -40,9 +56,9 @@ class searchToggle{
                                                 onComplete:()=>{
                                                 this.searchOverlay.classList.add('search-overlay--active')
                                                 this.body.classList.add('no-scroll')
+                                                this.searchBar.setAttribute('autofocus', 'true')
                                                 }}, '<')
+                        
     }
-    
-    
 }
 export default searchToggle
