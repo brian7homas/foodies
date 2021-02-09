@@ -15,6 +15,11 @@
     <div class="search-overlay--active__wrapper">
         <h1 class="search-overlay--active__headline">Search recipes</h1>
     </div>
+    <div class="container" >
+        <div id='results' class="search-overlay--active__results">
+        </div>
+    
+    </div>
 </div>
 
 

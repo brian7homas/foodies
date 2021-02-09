@@ -14,7 +14,7 @@
     <div class="header__wrapper" >
     
       <div class="search-bar">
-        <input class="search-bar__input" autofocus=''/>
+        <input class="search-bar__input" />
           <span class="search-bar__btn">
           <i class="icon-basic-magnifier"></i>
         </span>

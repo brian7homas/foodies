@@ -40,43 +40,80 @@ class searchToggle{
                 }
                 this.typingTimer = setTimeout(()=>{
                     var xhr = new XMLHttpRequest()
+                    var xhrKeto = new XMLHttpRequest()
+                    let combine = new Array()
                     xhr.onreadystatechange = ()=>{
-                        if(xhr.readyState===4){
+                        if(xhr.readyState === 4){
                             var obj = JSON.parse(xhr.response);
-                            // console.log(obj)
-                            if(obj.length == 0){
+                            combine = combine.concat(obj)
+                            console.log(combine)
+                            if(combine.length == 0){
                                 // console.log("empty")
-                                this.results.innerHTML = `${obj.length == 0 ? '<p>no results</p>' :'<div class="search">'}`
+                                console.log(combine)
+                                this.results.innerHTML = `${combine.length == 0 ? '<p>no results</p>' :'<div class="search">'}`
                             }else{
-                                // this.results.innerHTML = obj[0].acf.image
-                            for(var x=0; x < obj.length; x++){
-                                
-                                this.results.innerHTML += `${obj.length == 0 ? '<p>no results</p>' :'<div class="search">'}
+                            // this.results.innerHTML = obj[0].acf.image
+                            for(var x=0; x < combine.length; x++){
+                                this.results.innerHTML += `${combine.length == 0 ? '<p>no results</p>' :'<div class="search">'}
                                                             <ul class="search__list">
                                                                 <li class="search__list-item" ">
-                                                                    <img class="search__img" src="${obj[x].acf.image}" alt="no img available"/>
+                                                                    <img class="search__img" src="${combine[x].acf.image}" alt="no img available"/>
                                                                     <div class="search__description">
-                                                                        <a href="${obj[x].link}"><h2 class="search__description--title">${obj[x].title.rendered}</h2></a>
-                                                                        <h4 class="search__description--type" >Type: ${obj[x].type}</h4>        
-                                                                        <h4 class="search__description--carbs" >Carbs: ${obj[x].acf.carbohoydrates}</h4>        
+                                                                        <a href="${combine[x].link}"><h2 class="search__description--title">${combine[x].title.rendered}</h2></a>
+                                                                        <h4 class="search__description--type" >Type: ${combine[x].type}</h4>        
+                                                                        <h4 class="search__description--carbs" >Carbs: ${combine[x].acf.carbohoydrates}</h4>        
                                                                     </div>
                                                                 </li>
                                                             </ul>
-                                                            ${obj.length == 0? '</div>`' :''}
+                                                            ${combine.length == 0? '</div>`' :''}
                                                         `
                                 
                                 }//end for loop
                             }
+                        }   
+                    }
+                    xhrKeto.onreadystatechange=()=>{
+                        if(xhrKeto.readyState===4 ){
+                            var keto = JSON.parse(xhrKeto.response);
+                            combine = combine.concat(keto)
+                            console.log(combine)
                             
                             
-                            
+                            console.log(combine)
+                            if(combine.length == 0){
+                                // console.log("empty")
+                                console.log(combine)
+                                this.results.innerHTML = `${combine.length == 0 ? '<p>no results</p>' :'<div class="search">'}`
+                            }else{
+                            // this.results.innerHTML = obj[0].acf.image
+                            for(var x=0; x < combine.length; x++){
+                                this.results.innerHTML += `${combine.length == 0 ? '<p>no results</p>' :'<div class="search">'}
+                                                            <ul class="search__list">
+                                                                <li class="search__list-item" ">
+                                                                    <img class="search__img" src="${combine[x].acf.image}" alt="no img available"/>
+                                                                    <div class="search__description">
+                                                                        <a href="${combine[x].link}"><h2 class="search__description--title">${combine[x].title.rendered}</h2></a>
+                                                                        <h4 class="search__description--type" >Type: ${combine[x].type}</h4>        
+                                                                        <h4 class="search__description--carbs" >Carbs: ${combine[x].acf.carbohoydrates}</h4>        
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                            ${combine.length == 0? '</div>`' :''}
+                                                        `
+                                
+                                }//end for loop
+                            }
                         }
                         
                     }
+                    
                     xhr.open('GET', mainData.root_url + '/wp-json/wp/v2/recipe?search='+this.input.value, true)
-                    // xhr.open('GET', 'http://localhost:10058/wp-json/wp/v2/keto/', true)
+                    xhrKeto.open('GET', mainData.root_url + '/wp-json/wp/v2/keto?search='+this.input.value, true)
                     //http://localhost:10058/wp-json/wp/v2/keto?search=cake
                     xhr.send()
+                    xhrKeto.send()
+                    
+                    
                     
                     // this.results.innerHTML = "Results are here"
                     this.isWaiting = false 
@@ -106,8 +143,6 @@ class searchToggle{
         this.searchToggle.reversed()?this.searchToggle.play():this.searchToggle.reverse()
     }
     toggleIn(){
-        
-        
         this.searchToggle.fromTo(this.searchOverlay, 1.2, { duration: 1, opacity: 0}, {duration: 1, display:"flex", opacity:1} )
                         .to(this.searchBar, {display:'block', onComplete:()=>this.input.value = " "}, '<')
                         .to(this.searchBar, .5,{ 

@@ -1,0 +1,32 @@
+.search{
+    
+    &__list{
+        
+    }
+    &__list-item{
+        display:flex;
+        margin: .5em auto;
+        
+    }
+    display:block;
+    &__img{
+        max-width:30%;
+    }
+    &__description{
+        margin-left:2em;
+        display:flex;
+        flex-direction: column;
+        a{
+            color:$color-primary-4;
+            text-decoration: none;
+        }
+        &--title{
+            font-weight: 300;
+        }
+        &--type{
+            font-weight: 300;
+        }
+        
+    }
+    
+}
