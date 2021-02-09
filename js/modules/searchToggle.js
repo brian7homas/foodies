@@ -1,17 +1,21 @@
-import searchOverlay from "./searchOverlay"
+// import searchOverlay from "./searchOverlay"
 
 class searchToggle{
     constructor(){
+        
         this.body = document.querySelector('body')
         this.span = document.querySelector('.search-bar__btn')
         this.searchBar = document.querySelector('.search-bar')
         this.searchOverlay = document.querySelector('.search-overlay')
         this.input = document.querySelector('.search-bar__input')
-        this.typingTimer
-        console.log(this.searchOverlay)
+        this.typingTimer;
         this.searchToggle = gsap.timeline({reversed:true, paused: true })
         this.toggleIn()
         this.events()
+        this.isWaiting = false
+        this.results
+        //keep loading from restarting timeer
+        this.previousValue
     }
     events(){
         this.span.addEventListener("click", ()=>this.searching())
@@ -24,15 +28,21 @@ class searchToggle{
         this.input.addEventListener("keydown", ()=>this.typingLogic())
     }
     typingLogic(){
-        //  wait for typing
-        clearTimeout(this.typingTimer) //reset the timer
-        // give timer a name to access
-        this.typingTimer = setTimeout(()=>{
-            // this is the request to wp server
-            console.log("timeout")
-        },2000)
+        if(this.input.value != this.previousValue){
+            clearTimeout(this.typingTimer) //reset the timer
+        
+            if(!this.isWaiting){
+                this.results = document.querySelector('#results') 
+                this.results.innerHTML = "<div class='is-waiting'>Getting results ..</div>"
+                this.isWaiting = true
+            }
+            this.typingTimer = setTimeout(()=>{
+                this.results.innerHTML = "Results are here"
+                this.isWaiting = false 
+            },2000)
+        }
+        this.previousValue = thie.input.value
     }
-    
     
     //METHODS
     keyDown(e){
