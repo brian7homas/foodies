@@ -25,7 +25,7 @@ class searchToggle{
         //esc key to close search and overlay
         document.addEventListener("keydown", (e)=>this.closeSearch(e))
         
-        this.input.addEventListener("keydown", ()=>this.typingLogic())
+        this.input.addEventListener("keup", ()=>this.typingLogic())
     }
     typingLogic(){
         if(this.input.value != this.previousValue){
