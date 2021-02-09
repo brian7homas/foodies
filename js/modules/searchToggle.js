@@ -30,16 +30,22 @@ class searchToggle{
     typingLogic(){
         if(this.input.value != this.previousValue){
             clearTimeout(this.typingTimer) //reset the timer
-        
-            if(!this.isWaiting){
-                this.results = document.querySelector('#results') 
-                this.results.innerHTML = "<div class='is-waiting'>Getting results ..</div>"
-                this.isWaiting = true
+            if(this.input.value != ''){
+                if(!this.isWaiting){
+                    this.results = document.querySelector('#results') 
+                    this.results.innerHTML = "<div class='is-waiting'>Getting results ..</div>"
+                    this.isWaiting = true
+                }
+                this.typingTimer = setTimeout(()=>{
+                    this.results.innerHTML = "Results are here"
+                    this.isWaiting = false 
+                },2000)
+            }else{
+                this.results.innerHTML = ''
+                this.isWaiting = false
             }
-            this.typingTimer = setTimeout(()=>{
-                this.results.innerHTML = "Results are here"
-                this.isWaiting = false 
-            },2000)
+            
+            
         }
         this.previousValue = this.input.value
     }
