@@ -1,11 +1,18 @@
 .recipe-item{
-    &__ingrediants{
-        
+    h2, h4{
+        font-weight: 400;
     }
-    &__instructions{
-        
+    &__title{
+        color:$color-white;
+        font-size:1.4rem;
+        font-weight:500;
+        margin-bottom:1em;
     }
-    &__img{
+    &__type,&__calories,&__carbs{
+        display:flex;
+        justify-content: space-between;
+        font-size:1rem;
+        font-weight:400;
         
     }
 }

@@ -11,8 +11,11 @@
     </div>
 </footer>
 
-<!-- search overlay added in lecture 58 -->
-<!-- search overly removed in lecture 69 -->
+<div class="search-overlay">
+    <div class="search-overlay--active__wrapper">
+        <h1 class="search-overlay--active__headline">Search recipes</h1>
+    </div>
+</div>
 
 
 

@@ -1,0 +1,24 @@
+.search-overlay{
+    display:none;
+    &--active{
+        position: fixed;
+        height:100vh;
+        top:0;
+        background-color: rgba($color-black, .55);
+        width: 100vw;
+        &__wrapper{
+            margin:0 auto;
+            height:50vh;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        &__headline{
+            color:$color-white;
+            font-size: 1.5rem;
+        }
+    }
+    
+    
+}

@@ -12,12 +12,14 @@
   
   <header class="header">
     <div class="header__wrapper" >
+    
       <div class="search-bar">
-        <input class="search-bar__input" />
-        <span class="search-bar__btn">
+        <input class="search-bar__input" autofocus='true'/>
+          <span class="search-bar__btn">
           <i class="icon-basic-magnifier"></i>
         </span>
       </div>
+      
       <div class="nav-toggle">
         <button class="btn__nav">Menu</button>
       </div>
