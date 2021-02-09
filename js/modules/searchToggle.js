@@ -13,11 +13,11 @@ class searchToggle{
         this.toggleIn()
         this.events()
         this.isWaiting = false
-        this.results
+        this.results= document.querySelector('#results') 
         //keep loading from restarting timeer
         this.previousValue
         //var used to select all input and textareas
-        this.userInput = document.querySelectorAll('input, textarea') // removed from checking for s key because -- this.userInput.activeElement -- disables the overlay due to it's default autofocus attr
+        //this.userInput = document.querySelectorAll('input, textarea') // removed from checking for s key because -- this.userInput.activeElement -- disables the overlay due to it's default autofocus attr
     }
     events(){
         this.span.addEventListener("click", ()=>this.searching())
@@ -39,7 +39,46 @@ class searchToggle{
                     this.isWaiting = true
                 }
                 this.typingTimer = setTimeout(()=>{
-                    this.results.innerHTML = "Results are here"
+                    var xhr = new XMLHttpRequest()
+                    xhr.onreadystatechange = ()=>{
+                        if(xhr.readyState===4){
+                            var obj = JSON.parse(xhr.response);
+                            console.log(obj)
+                            if(obj.length == 0){
+                                console.log("empty")
+                                this.results.innerHTML = `${obj.length == 0 ? '<p>no results</p>' :'<div class="search">'}`
+                            }else{
+                                // this.results.innerHTML = obj[0].acf.image
+                            for(var x=0; x < obj.length; x++){
+                                
+                                this.results.innerHTML += `${obj.length == 0 ? '<p>no results</p>' :'<div class="search">'}
+                                                            <ul class="search__list">
+                                                                <li class="search__list-item" ">
+                                                                    <img class="search__img" src="${obj[x].acf.image}" alt="no img available"/>
+                                                                    <div class="search__description">
+                                                                        <a href="${obj[x].link}"><h2 class="search__description--title">${obj[x].title.rendered}</h2></a>
+                                                                        <h4 class="search__description--type" >Type: ${obj[x].type}</h4>        
+                                                                        <h4 class="search__description--carbs" >Carbs: ${obj[x].acf.carbohoydrates}</h4>        
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                            ${obj.length == 0? '</div>`' :''}
+                                                        `
+                                
+                                }//end for loop
+                            }
+                            
+                            
+                            
+                        }
+                        
+                    }
+                    xhr.open('GET', mainData.root_url + '/wp-json/wp/v2/recipe?search='+this.input.value, true)
+                    // xhr.open('GET', 'http://localhost:10058/wp-json/wp/v2/keto/', true)
+                    //http://localhost:10058/wp-json/wp/v2/keto?search=cake
+                    xhr.send()
+                    
+                    // this.results.innerHTML = "Results are here"
                     this.isWaiting = false 
                 },2000)
             }else{
