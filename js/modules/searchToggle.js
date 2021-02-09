@@ -2,8 +2,8 @@
 
 class searchToggle{
     constructor(){
-        
         this.body = document.querySelector('body')
+        this.addOverlay()
         this.span = document.querySelector('.search-bar__btn')
         this.searchBar = document.querySelector('.search-bar')
         this.searchOverlay = document.querySelector('.search-overlay')
@@ -43,9 +43,9 @@ class searchToggle{
                     xhr.onreadystatechange = ()=>{
                         if(xhr.readyState===4){
                             var obj = JSON.parse(xhr.response);
-                            console.log(obj)
+                            // console.log(obj)
                             if(obj.length == 0){
-                                console.log("empty")
+                                // console.log("empty")
                                 this.results.innerHTML = `${obj.length == 0 ? '<p>no results</p>' :'<div class="search">'}`
                             }else{
                                 // this.results.innerHTML = obj[0].acf.image
@@ -80,9 +80,9 @@ class searchToggle{
                     
                     // this.results.innerHTML = "Results are here"
                     this.isWaiting = false 
-                },2000)
+                },850)
             }else{
-                this.results.innerHTML = ''
+                this.results.innerHTML = ' '
                 this.isWaiting = false
             }
             
@@ -106,16 +106,35 @@ class searchToggle{
         this.searchToggle.reversed()?this.searchToggle.play():this.searchToggle.reverse()
     }
     toggleIn(){
-        this.searchToggle.fromTo(this.searchOverlay, .3, { duration: .2, opacity: 0}, {display:"flex", opacity:1} )
-                        .to(this.searchBar, {display:'block'}, '<')
+        
+        
+        this.searchToggle.fromTo(this.searchOverlay, 1.2, { duration: 1, opacity: 0}, {duration: 1, display:"flex", opacity:1} )
+                        .to(this.searchBar, {display:'block', onComplete:()=>this.input.value = " "}, '<')
                         .to(this.searchBar, .5,{ 
                                                 top: '0em', 
                                                 onComplete:()=>{
                                                 this.searchOverlay.classList.add('search-overlay--active')
                                                 this.body.classList.add('no-scroll')
-                                                this.searchBar.setAttribute('autofocus', 'true')
+                                                
+                                                this.input.focus()
+                                                
                                                 }}, '<')
                         
     }
+    addOverlay(){
+        this.body.append(`
+                        <div class="search-overlay">
+                            <div class="search-overlay--active__wrapper">
+                                <h1 class="search-overlay--active__headline">Search recipes</h1>
+                            </div>
+                            <div class="container" >
+                                <div id='results' class="search-overlay--active__results">
+                                </div>
+                            
+                            </div>
+                        </div>
+                        `)
+    }
+
 }
 export default searchToggle
