@@ -16,6 +16,8 @@ class searchToggle{
         this.results
         //keep loading from restarting timeer
         this.previousValue
+        //var used to select all input and textareas
+        this.userInput = document.querySelectorAll('input, textarea') // removed from checking for s key because -- this.userInput.activeElement -- disables the overlay due to it's default autofocus attr
     }
     events(){
         this.span.addEventListener("click", ()=>this.searching())
@@ -52,7 +54,7 @@ class searchToggle{
     
     //METHODS
     keyDown(e){
-        if(e.keyCode == 83 && this.searchToggle.reversed()){
+        if(e.keyCode == 83 && this.searchToggle.reversed() ){
             this.searching()
         }
     }
