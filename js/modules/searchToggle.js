@@ -41,7 +41,9 @@ class searchToggle{
                 this.typingTimer = setTimeout(()=>{
                     let normalRecipes = fetch(mainData.root_url+'/wp-json/wp/v2/recipe?search='+this.input.value)
                     let ketoRecipes = fetch(mainData.root_url+'/wp-json/wp/v2/keto?search='+this.input.value)
-                    Promise.all([ketoRecipes , normalRecipes])
+                    let lowCarbRecipes = fetch(mainData.root_url+'/wp-json/wp/v2/low-carb?search='+this.input.value)
+                    let drinkRecipes = fetch(mainData.root_url+'/wp-json/wp/v2/drink?search='+this.input.value)
+                    Promise.all([ketoRecipes , lowCarbRecipes,  normalRecipes, drinkRecipes])
                     .then( recipes =>{
                         
                         //returned promise from response obj
@@ -124,7 +126,7 @@ class searchToggle{
         this.searchToggle.reversed()?this.searchToggle.play():this.searchToggle.reverse()
     }
     toggleIn(){
-        this.searchToggle.fromTo(this.searchOverlay, 1.2, { duration: 1, opacity: 0}, {duration: 1, display:"flex", opacity:1} )
+        this.searchToggle.fromTo(this.searchOverlay, 1, { duration: .5, opacity: 0}, {duration: .5, display:"flex", opacity:1} )
                         .to(this.searchBar, {display:'block', onComplete:()=>this.input.value = " "}, '<')
                         .to(this.searchBar, .5,{ 
                                                 top: '0em', 

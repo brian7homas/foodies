@@ -10,7 +10,9 @@
     }
     display:block;
     &__img{
-        max-width:30%;
+        background-size: contain;
+        max-width: 45%;
+        max-height:10em;
     }
     &__description{
         margin-left:2em;
