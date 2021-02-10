@@ -49,23 +49,23 @@ class searchToggle{
                             console.log(combine)
                             if(combine.length == 0){
                                 // console.log("empty")
-                                console.log(combine)
-                                this.results.innerHTML = `${combine.length == 0 ? '<p>no results</p>' :'<div class="search">'}`
+                                console.log(combine + ' is zero')
+                                this.results.innerHTML = `${combine.length == 0 ? '<p>no results</p>' :'<div class="search"> <ul class="search__list">'}`
                             }else{
                             // this.results.innerHTML = obj[0].acf.image
                             for(var x=0; x < combine.length; x++){
                                 this.results.innerHTML += `${combine.length == 0 ? '<p>no results</p>' :'<div class="search">'}
-                                                            <ul class="search__list">
+                                                            
                                                                 <li class="search__list-item" ">
-                                                                    <img class="search__img" src="${combine[x].acf.image}" alt="no img available"/>
+                                                                <img class="search__img" src="${combine[x].acf.image}" alt="no img available"/>
                                                                     <div class="search__description">
                                                                         <a href="${combine[x].link}"><h2 class="search__description--title">${combine[x].title.rendered}</h2></a>
                                                                         <h4 class="search__description--type" >Type: ${combine[x].type}</h4>        
                                                                         <h4 class="search__description--carbs" >Carbs: ${combine[x].acf.carbohoydrates}</h4>        
                                                                     </div>
                                                                 </li>
-                                                            </ul>
-                                                            ${combine.length == 0? '</div>`' :''}
+                                                            
+                                                            ${combine.length == 0? '</ul></div>`' :''}
                                                         `
                                 
                                 }//end for loop
@@ -75,33 +75,34 @@ class searchToggle{
                     xhrKeto.onreadystatechange=()=>{
                         if(xhrKeto.readyState===4 ){
                             var keto = JSON.parse(xhrKeto.response);
-                            combine = combine.concat(keto)
-                            console.log(combine)
+                            // combine = combine.concat(keto)
+                            // console.log(combine)
                             
                             
-                            console.log(combine)
-                            if(combine.length == 0){
+                            if(keto.length == 0){
                                 // console.log("empty")
-                                console.log(combine)
-                                this.results.innerHTML = `${combine.length == 0 ? '<p>no results</p>' :'<div class="search">'}`
+                                console.log(keto + ' keto combine is zero')
+                                this.results.innerHTML = `${keto.length == 0 ? '<p>no results</p>' :'<div class="search">'}`
                             }else{
+                                combine = combine.concat(keto)
+                                // console.log(combine)
                             // this.results.innerHTML = obj[0].acf.image
-                            for(var x=0; x < combine.length; x++){
-                                this.results.innerHTML += `${combine.length == 0 ? '<p>no results</p>' :'<div class="search">'}
-                                                            <ul class="search__list">
-                                                                <li class="search__list-item" ">
-                                                                    <img class="search__img" src="${combine[x].acf.image}" alt="no img available"/>
-                                                                    <div class="search__description">
-                                                                        <a href="${combine[x].link}"><h2 class="search__description--title">${combine[x].title.rendered}</h2></a>
-                                                                        <h4 class="search__description--type" >Type: ${combine[x].type}</h4>        
-                                                                        <h4 class="search__description--carbs" >Carbs: ${combine[x].acf.carbohoydrates}</h4>        
-                                                                    </div>
-                                                                </li>
-                                                            </ul>
-                                                            ${combine.length == 0? '</div>`' :''}
-                                                        `
+                            // for(var x=0; x < combine.length; x++){
+                            //     this.results.innerHTML += `${combine.length == 0 ? '<p>no results</p>' :'<div class="search">'}
+                            //                                 <ul class="search__list">
+                            //                                     <li class="search__list-item" ">
+                            //                                         <img class="search__img" src="${combine[x].acf.image}" alt="no img available"/>
+                            //                                         <div class="search__description">
+                            //                                             <a href="${combine[x].link}"><h2 class="search__description--title">${combine[x].title.rendered}</h2></a>
+                            //                                             <h4 class="search__description--type" >Type: ${combine[x].type}</h4>        
+                            //                                             <h4 class="search__description--carbs" >Carbs: ${combine[x].acf.carbohoydrates}</h4>        
+                            //                                         </div>
+                            //                                     </li>
+                            //                                 </ul>
+                            //                                 ${combine.length == 0? '</div>`' :''}
+                            //                             `
                                 
-                                }//end for loop
+                            //     }//end for loop
                             }
                         }
                         
@@ -115,7 +116,7 @@ class searchToggle{
                     
                     
                     
-                    // this.results.innerHTML = "Results are here"
+                    this.results.innerHTML = "Results are here"
                     this.isWaiting = false 
                 },850)
             }else{
