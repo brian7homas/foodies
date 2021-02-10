@@ -15,7 +15,7 @@ class navbarToggle{
         // this.bodyEventremove()
         this.events()
         
-        console.log(this.menuItemsArray)
+        // console.log(this.menuItemsArray)
         this.iterate()
     }
     events(){
@@ -41,11 +41,11 @@ class navbarToggle{
     }
     iterate(){
         this.menuItemsArray.forEach(element =>{
-            console.log(element.classList.contains('current'))
+            // console.log(element.classList.contains('current'))
             if(element.classList.contains('current')){
                 console.log(element)
             }else{
-                console.log('no current detected')
+                // console.log('no current detected')
             }
         })
     }
