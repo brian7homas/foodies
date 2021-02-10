@@ -39,83 +39,63 @@ class searchToggle{
                     this.isWaiting = true
                 }
                 this.typingTimer = setTimeout(()=>{
-                    var xhr = new XMLHttpRequest()
-                    var xhrKeto = new XMLHttpRequest()
-                    let combine = new Array()
-                    xhr.onreadystatechange = ()=>{
-                        if(xhr.readyState === 4){
-                            var obj = JSON.parse(xhr.response);
-                            combine = combine.concat(obj)
-                            console.log(combine)
-                            if(combine.length == 0){
-                                // console.log("empty")
-                                console.log(combine + ' is zero')
-                                this.results.innerHTML = `${combine.length == 0 ? '<p>no results</p>' :'<div class="search"> <ul class="search__list">'}`
-                            }else{
-                            // this.results.innerHTML = obj[0].acf.image
-                            for(var x=0; x < combine.length; x++){
-                                this.results.innerHTML += `${combine.length == 0 ? '<p>no results</p>' :'<div class="search">'}
-                                                            
-                                                                <li class="search__list-item" ">
-                                                                <img class="search__img" src="${combine[x].acf.image}" alt="no img available"/>
-                                                                    <div class="search__description">
-                                                                        <a href="${combine[x].link}"><h2 class="search__description--title">${combine[x].title.rendered}</h2></a>
-                                                                        <h4 class="search__description--type" >Type: ${combine[x].type}</h4>        
-                                                                        <h4 class="search__description--carbs" >Carbs: ${combine[x].acf.carbohoydrates}</h4>        
-                                                                    </div>
-                                                                </li>
-                                                            
-                                                            ${combine.length == 0? '</ul></div>`' :''}
-                                                        `
-                                
-                                }//end for loop
-                            }
-                        }   
-                    }
-                    xhrKeto.onreadystatechange=()=>{
-                        if(xhrKeto.readyState===4 ){
-                            var keto = JSON.parse(xhrKeto.response);
-                            // combine = combine.concat(keto)
-                            // console.log(combine)
-                            
-                            
-                            if(keto.length == 0){
-                                // console.log("empty")
-                                console.log(keto + ' keto combine is zero')
-                                this.results.innerHTML = `${keto.length == 0 ? '<p>no results</p>' :'<div class="search">'}`
-                            }else{
-                                combine = combine.concat(keto)
-                                // console.log(combine)
-                            // this.results.innerHTML = obj[0].acf.image
-                            // for(var x=0; x < combine.length; x++){
-                            //     this.results.innerHTML += `${combine.length == 0 ? '<p>no results</p>' :'<div class="search">'}
-                            //                                 <ul class="search__list">
-                            //                                     <li class="search__list-item" ">
-                            //                                         <img class="search__img" src="${combine[x].acf.image}" alt="no img available"/>
-                            //                                         <div class="search__description">
-                            //                                             <a href="${combine[x].link}"><h2 class="search__description--title">${combine[x].title.rendered}</h2></a>
-                            //                                             <h4 class="search__description--type" >Type: ${combine[x].type}</h4>        
-                            //                                             <h4 class="search__description--carbs" >Carbs: ${combine[x].acf.carbohoydrates}</h4>        
-                            //                                         </div>
-                            //                                     </li>
-                            //                                 </ul>
-                            //                                 ${combine.length == 0? '</div>`' :''}
-                            //                             `
-                                
-                            //     }//end for loop
-                            }
-                        }
+                    let normalRecipes = fetch(mainData.root_url+'/wp-json/wp/v2/recipe?search='+this.input.value)
+                    let ketoRecipes = fetch(mainData.root_url+'/wp-json/wp/v2/keto?search='+this.input.value)
+                    Promise.all([ketoRecipes , normalRecipes])
+                    .then( recipes =>{
                         
+                        //returned promise from response obj
+                        recipes.forEach(recipe =>{
+                            // file.json is a promise passed into the display function
+                            // console.log(recipe.json())
+                            display( recipe.json() )
+                        })
+                        
+                    })
+                    .catch(err=>{
+                        console.log(err)
+                    })
+                    
+                    // display is being called twice
+                    let display = (prom) =>{
+                        
+                        // wait until promise is resolved
+                        prom.then(data=>{
+                            if(data.length != 0 && data != 'undefined'){
+                                console.log(data)
+                                var combine = new Array() 
+                                combine.concat(data)
+                                console.log(combine)
+                                console.log("there is data")
+                                console.log(data[0].id)
+                                console.log(data[0].acf.image)
+                                
+                                var imgURL = data[0].acf.image
+                                var link = data[0].link
+                                var title = data[0].title.rendered
+                                var type = data[0].type
+                                var carbs = data[0].acf.carbohoydrates
+                                this.results.innerHTML += `<div class="search">
+                                                            <li class="search__list-item" ">
+                                                            <img class="search__img" src="${imgURL}" alt="no img available"/>
+                                                                <div class="search__description">
+                                                                    <a href="${link}"><h2 class="search__description--title">${title}</h2></a>
+                                                                    <h4 class="search__description--type" >Type: ${type}</h4>        
+                                                                    <h4 class="search__description--carbs" >Carbs: ${carbs}</h4>        
+                                                                </div>
+                                                            </li>
+                                                        </div>`
+                                
+                            }else if(data.length === 0 ){
+                                console.log("zero")
+                            }
+                            
+                        })
+                        .catch(err=>{
+                            console.log(err)
+                            this.results.innerHTML = "No results for your search"
+                        })
                     }
-                    
-                    xhr.open('GET', mainData.root_url + '/wp-json/wp/v2/recipe?search='+this.input.value, true)
-                    xhrKeto.open('GET', mainData.root_url + '/wp-json/wp/v2/keto?search='+this.input.value, true)
-                    //http://localhost:10058/wp-json/wp/v2/keto?search=cake
-                    xhr.send()
-                    xhrKeto.send()
-                    
-                    
-                    
                     this.results.innerHTML = "Results are here"
                     this.isWaiting = false 
                 },850)
