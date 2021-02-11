@@ -1,5 +1,5 @@
 <?php
-
+require get_theme_file_path('./inc/search-routes.php');
 
 
 function navbar(){?>
@@ -36,8 +36,8 @@ function main_theme_files(){
       } else {
         //echo "not f-u.local";
         wp_enqueue_script('our-vendors-js', get_theme_file_uri('/bundled-assets/undefined'), NULL, '1.1', true);
-        wp_enqueue_script('main-js', get_theme_file_uri('/bundled-assets/scripts.710fd17d3b18b8c08970.js'), NULL, '1.0', true);
-        wp_enqueue_style('our-main-styles', get_theme_file_uri('/bundled-assets/styles.710fd17d3b18b8c08970.css'));
+        wp_enqueue_script('main-js', get_theme_file_uri('/bundled-assets/scripts.36a526e806c3dec83fcd.js'), NULL, '1.0', true);
+        wp_enqueue_style('our-main-styles', get_theme_file_uri('/bundled-assets/styles.36a526e806c3dec83fcd.css'));
       }
     //runs regardless of environment
     wp_localize_script( 'main-js', 'mainData', array(
