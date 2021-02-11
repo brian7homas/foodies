@@ -1,0 +1,94 @@
+$break-320: 320px;
+$break-375: 375px;
+$break-480: 480px;
+$break-568: 568px;
+$break-667: 667px;
+$break-736: 736px;
+$break-812: 812px;
+
+$break-975: 975px;
+$break-1024: 1024px;
+
+@mixin respond-to($media){
+      //?iphone 4, 4s, se
+    @if $media == handhelds-portrait-480 {
+        @media only screen 
+            and (min-width: $break-320) 
+            and (max-width: $break-480)
+            and (-webkit-min-device-pixel-ratio: 1)
+            and ( orientation: portrait)
+            { @content; }
+        }
+    @else if $media == handhelds-landscape-480 {
+        @media only screen 
+            and (max-width: $break-480)
+            and (-webkit-min-device-pixel-ratio: 1)
+            and ( orientation: landscape)
+            { @content; }
+        }
+    @else if $media == medium-portrait-568 {
+        @media only screen 
+            and (min-width: $break-375) 
+            and (max-width: $break-568)
+            and (-webkit-min-device-pixel-ratio: 1)
+            and ( orientation: portrait)
+            { @content; }
+        }
+    //?iphone 5, SS, SC SSE
+    @else if $media == medium-landscape-568 {
+        @media only screen 
+            and (min-width: $break-480 + 1) 
+            and (max-width: $break-568)
+            and (-webkit-min-device-pixel-ratio: 2)
+            and ( orientation: landscape)
+            { @content; }
+        }
+    @else if $media == medium-landscape-667 {
+            @media only screen 
+                and (min-width: $break-568 + 1)
+                and (-webkit-min-device-pixel-ratio: 2)
+                and ( orientation: landscape)
+                { @content; }
+        }
+    // pixel ratio 3
+    @else if $media == medium-landscape-736 {
+        @media only screen 
+            and (min-width: $break-736)
+            and (-webkit-min-device-pixel-ratio: 3)
+            and ( orientation: landscape)
+            { @content; }
+        }
+    
+    @else if $media == medium-portrait-812 {
+        @media only screen 
+            and (min-width: $break-568 +1)
+            and (max-width: $break-812)
+            and (-webkit-min-device-pixel-ratio: 1)
+            and ( orientation: portrait)
+            { @content; }
+        }
+    @else if $media == medium-landscape-812 {
+        @media only screen 
+            and (min-width: $break-812)
+            and (-webkit-min-device-pixel-ratio: 1)
+            and ( orientation: landscape)
+            { @content; }
+        }
+    
+    @else if $media == medium-portrait-975 {
+        @media only screen 
+            and (min-width: $break-812 + 1)
+            and (max-width: $break-975)
+            and (-webkit-min-device-pixel-ratio: 1)
+            and ( orientation: portrait)
+            { @content; }
+        }
+    @else if $media == medium-portrait-1024 {
+        @media only screen 
+            and (min-width: $break-975 + 1)
+            and (max-width: $break-1024)
+            and (-webkit-min-device-pixel-ratio: 1)
+            and ( orientation: portrait)
+            { @content; }
+        }
+}
