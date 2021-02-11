@@ -39,32 +39,23 @@ class searchToggle{
                     this.isWaiting = true
                 }
                 this.typingTimer = setTimeout(()=>{
-                    let normalRecipes = fetch(mainData.root_url+'/wp-json/wp/v2/recipe?search='+this.input.value)
-                    let ketoRecipes = fetch(mainData.root_url+'/wp-json/wp/v2/keto?search='+this.input.value)
-                    let lowCarbRecipes = fetch(mainData.root_url+'/wp-json/wp/v2/low-carb?search='+this.input.value)
-                    let drinkRecipes = fetch(mainData.root_url+'/wp-json/wp/v2/drink?search='+this.input.value)
-                    Promise.all([ketoRecipes , lowCarbRecipes,  normalRecipes, drinkRecipes])
+                    let customRoute = fetch(mainData.root_url+'/wp-json/recipe/v1/search?term='+this.input.value)
+                    Promise.all([customRoute])
                     .then( recipes =>{
-                        
-                        //returned promise from response obj
                         recipes.forEach(recipe =>{
-                            // file.json is a promise passed into the display function
-                            // console.log(recipe.json())  
+                            
+                            console.log(recipe)
                             display( recipe.json() )
-                        })
-                        
+                        }) 
                     })
-                    .catch(err=>{
-                        console.log(err)
-                        
-                    })
-                    
                     // display is being called twice
-                    let display = (prom) =>{
-                        
+                    let display = (prom) =>{    
                         // wait until promise is resolved
                         prom.then(data=>{
-                            console.log(data)
+                            console.log(data.keto[0].title)
+                            console.log(data.keto[0].link)
+                            console.log(data.keto[0].img)
+                            console.log(data.keto[0].carbs)
                             if(data.length != 0 && data != 'undefined'){
                                 console.log(data)
                                 var combine = new Array() 
@@ -74,11 +65,11 @@ class searchToggle{
                                 //console.log(data[0].id)
                                 //console.log(data[0].acf.image)
                                 
-                                var imgURL = data[0].acf.image
-                                var link = data[0].link
-                                var title = data[0].title.rendered
-                                var type = data[0].type
-                                var carbs = data[0].acf.carbohoydrates
+                                var imgURL = data.keto[0].img
+                                var link = data.keto[0].link
+                                var title = data.keto[0].title
+                                var type = data.keto[0].carbs
+                                var carbs = data.keto[0].carbs
                                 this.results.innerHTML += `<div class="search">
                                                             <li class="search__list-item" ">
                                                             <img class="search__img" src="${imgURL}" alt="no img available"/>
@@ -89,9 +80,8 @@ class searchToggle{
                                                                 </div>
                                                             </li>
                                                         </div>`
-                                
-                            }
-                            
+                            };
+                            this.isWaiting = false
                         })
                         .catch(err=>{
                             console.log(err)
@@ -102,11 +92,9 @@ class searchToggle{
                     this.isWaiting = false 
                 },850)
             }else{
-                this.results.innerHTML = ' '
+                this.results.innerHTML = ''
                 this.isWaiting = false
             }
-            
-            
         }
         this.previousValue = this.input.value
     }

@@ -11,7 +11,7 @@ add_action('rest_api_init', 'searchRoutes');
 
 function recipeSearchResults($data){
     $AllRecipes = new WP_Query(array(
-        'post_type' => array('recipe', 'keto', 'low-carb', 'drink'),
+        'post_type' => array('page', 'post', 'recipe', 'keto', 'low-carb', 'drink'),
         's' => sanitize_text_field($data['term'])
     ));
     
@@ -32,7 +32,7 @@ function recipeSearchResults($data){
                 //'made up name' => wp function
                     'title' => get_the_title(),
                     'link' => get_the_permalink(),
-                    // 'img' => the_field('image')
+                    'posts' => the_post()
                 ));
         }
         if(get_post_type() == 'recipe'){
@@ -40,7 +40,11 @@ function recipeSearchResults($data){
                 //'made up name' => wp function
                     'title' => get_the_title(),
                     'link' => get_the_permalink(),
-                    // 'img' => the_field('image')
+                    'img' => get_field('image'),
+                    'type' => get_field('type'),
+                    'carbs' => get_field('carbohoydrates'),
+                    'sugar' => get_field('sugar'),
+                    'calories' => get_field('calories')
                 ));
         }
         if(get_post_type() == 'keto'){
@@ -48,7 +52,11 @@ function recipeSearchResults($data){
                 //'made up name' => wp function
                     'title' => get_the_title(),
                     'link' => get_the_permalink(),
-                    // 'img' => the_field('image')
+                    'img' => get_field('image'),
+                    'type' => get_field('type'),
+                    'carbs' => get_field('carbohoydrates'),
+                    'sugar' => get_field('sugar'),
+                    'calories' => get_field('calories')
                 ));
         }
         if(get_post_type() == 'low-carb'){
@@ -56,7 +64,11 @@ function recipeSearchResults($data){
                 //'made up name' => wp function
                     'title' => get_the_title(),
                     'link' => get_the_permalink(),
-                    // 'img' => the_field('image')
+                    'img' => get_field('image'),
+                    'type' => get_field('type'),
+                    'carbs' => get_field('carbohoydrates'),
+                    'sugar' => get_field('sugar'),
+                    'calories' => get_field('calories')
                 ));
         }
         if(get_post_type() == 'drink'){
@@ -64,7 +76,11 @@ function recipeSearchResults($data){
                 //'made up name' => wp function
                     'title' => get_the_title(),
                     'link' => get_the_permalink(),
-                    // 'img' => the_field('image')
+                    'img' => get_field('image'),
+                    'type' => get_field('type'),
+                    'carbs' => get_field('carbohoydrates'),
+                    'sugar' => get_field('sugar'),
+                    'calories' => get_field('calories')
                 ));
         }
     }

@@ -51,6 +51,6 @@
 </div>
 
 <?php 
-    navbar();
+    
     get_footer();
 ?>
