@@ -29,10 +29,11 @@
                     endwhile;  
                 ?>
     </div>
-    <?php navbar();?>    
+    
 </div>
 
 
 <?php 
+    
     get_footer();
 ?>

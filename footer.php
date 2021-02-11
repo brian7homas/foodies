@@ -1,6 +1,6 @@
 
 <footer class="footer">
-    <div class="footer__wrapper">
+    <div class="footer__wrapper ">
         <nav class="footer__nav-menu">
             <ul class="footer__nav-menu__wrapper">
                 <!-- <li class="footer__nav-menu__item">item 1</li>
@@ -11,7 +11,7 @@
     </div>
 </footer>
 
-<div class="search-overlay">
+<!-- <div class="search-overlay hidden">
     <div class="search-overlay--active__wrapper">
         <h1 class="search-overlay--active__headline">Search recipes</h1>
     </div>
@@ -20,11 +20,14 @@
         </div>
     
     </div>
-</div>
+</div> -->
 
 
 
-<?php wp_footer(); ?>
+<?php 
+    navbar();
+    wp_footer(); 
+?>
 
 </body>
 </html>

@@ -11,7 +11,7 @@ body, html {
   font-weight: 400;
   font-style: normal; }
 
-/* line 11, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/base/_global.scss */
+/* line 12, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/base/_global.scss */
 .no-scroll {
   overflow: hidden; }
 
@@ -20,6 +20,10 @@ body, html {
   margin: 0 auto;
   height: 100%;
   width: 100%; }
+
+/* line 1, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/utils/_hidden.scss */
+.hidden {
+  display: none; }
 
 /* line 2, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/layout/_search-bar.scss */
 .search-bar {
@@ -238,7 +242,8 @@ a.current {
     display: block;
     color: white;
     position: relative;
-    z-index: -1; } }
+    z-index: -1;
+    overflow-y: scroll; } }
 
 @media only screen and (max-width: 480px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
   /* line 1, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/pages/_page.scss */
@@ -250,17 +255,27 @@ a.current {
   .page {
     color: violet; } }
 
-@media only screen and (min-width: 481px) and (max-width: 568px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+@media only screen and (min-width: 481px) and (max-width: 568px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
   /* line 1, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/pages/_page.scss */
   .page {
     color: turquoise; } }
+
+@media only screen and (min-width: 569px) and (max-width: 736px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
+  /* line 1, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/pages/_page.scss */
+  .page {
+    color: blue; } }
+
+@media only screen and (min-width: 737px) and (max-width: 812px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
+  /* line 1, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/pages/_page.scss */
+  .page {
+    color: orange; } }
 
 @media only screen and (min-width: 569px) and (max-width: 812px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: portrait) {
   /* line 1, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/pages/_page.scss */
   .page {
     color: yellow; } }
 
-@media only screen and (min-width: 812px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
+@media only screen and (min-width: 813px) and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) and (orientation: landscape) {
   /* line 1, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/pages/_page.scss */
   .page {
     color: firebrick; } }
@@ -275,14 +290,14 @@ a.current {
   .page {
     color: ghostwhite; } }
 
-/* line 37, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/pages/_page.scss */
+/* line 43, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/pages/_page.scss */
 .page__wrapper {
   height: 100vh;
   background-color: #52b788;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   width: 100vw; }
-  /* line 44, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/pages/_page.scss */
+  /* line 51, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/pages/_page.scss */
   .page__wrapper p {
     padding: .5em 2em; }
 
@@ -293,7 +308,7 @@ a.current {
   z-index: -1; }
   /* line 6, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/pages/_archive-recipe.scss */
   .recipe-archive__wrapper {
-    height: 100vh;
+    height: 100%;
     background-color: #52b788;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;

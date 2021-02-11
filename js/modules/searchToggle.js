@@ -49,13 +49,14 @@ class searchToggle{
                         //returned promise from response obj
                         recipes.forEach(recipe =>{
                             // file.json is a promise passed into the display function
-                            // console.log(recipe.json())
+                            // console.log(recipe.json())  
                             display( recipe.json() )
                         })
                         
                     })
                     .catch(err=>{
                         console.log(err)
+                        
                     })
                     
                     // display is being called twice
@@ -63,14 +64,15 @@ class searchToggle{
                         
                         // wait until promise is resolved
                         prom.then(data=>{
+                            console.log(data)
                             if(data.length != 0 && data != 'undefined'){
                                 console.log(data)
                                 var combine = new Array() 
                                 combine.concat(data)
-                                console.log(combine)
-                                console.log("there is data")
-                                console.log(data[0].id)
-                                console.log(data[0].acf.image)
+                                //console.log(combine)
+                                //console.log("there is data")
+                                //console.log(data[0].id)
+                                //console.log(data[0].acf.image)
                                 
                                 var imgURL = data[0].acf.image
                                 var link = data[0].link
@@ -88,8 +90,6 @@ class searchToggle{
                                                             </li>
                                                         </div>`
                                 
-                            }else if(data.length === 0 ){
-                                console.log("zero")
                             }
                             
                         })
@@ -132,7 +132,8 @@ class searchToggle{
                                                 top: '0em', 
                                                 onComplete:()=>{
                                                 this.searchOverlay.classList.add('search-overlay--active')
-                                                this.body.classList.add('no-scroll')
+                                                
+                                                // this.body.classList.add('no-scroll')
                                                 
                                                 this.input.focus()
                                                 
@@ -140,18 +141,18 @@ class searchToggle{
                         
     }
     addOverlay(){
-        this.body.append(`
-                        <div class="search-overlay">
-                            <div class="search-overlay--active__wrapper">
-                                <h1 class="search-overlay--active__headline">Search recipes</h1>
-                            </div>
-                            <div class="container" >
-                                <div id='results' class="search-overlay--active__results">
-                                </div>
-                            
-                            </div>
+        console.log("overlay")
+        this.body.insertAdjacentHTML("afterend", 
+                `<div class="search-overlay">
+                    <div class="search-overlay--active__wrapper">
+                        <h1 class="search-overlay--active__headline">Search recipes</h1>
+                    </div>
+                    <div class="container" >
+                        <div id='results' class="search-overlay--active__results">
                         </div>
-                        `)
+                    </div>
+                </div>`)
+        // this.body.append()
     }
 
 }
