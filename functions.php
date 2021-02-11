@@ -21,6 +21,8 @@ function navbar(){?>
         </nav>
 <?php };
 
+
+
 function main_theme_files(){
     wp_enqueue_style('icons', get_theme_file_uri('/css/icons/styles.css'));
     wp_enqueue_script('Barba-core', 'https://unpkg.com/@barba/core', NULL, '1.0', true);
@@ -43,8 +45,6 @@ function main_theme_files(){
       
     ));
 }
-
-
 add_action('wp_enqueue_scripts', 'main_theme_files');
 
 
