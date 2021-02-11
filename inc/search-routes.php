@@ -19,7 +19,7 @@ function recipeSearchResults($data){
         'generalInfo'=> array(),
         'normal' => array(),
         'keto' =>array(),
-        'low-carb' =>array(),
+        'lowCarb' =>array(),
         'drinks'=>array()
     ); //new array
     
@@ -60,7 +60,7 @@ function recipeSearchResults($data){
                 ));
         }
         if(get_post_type() == 'low-carb'){
-            array_push($results['low-carb'], array( // add to new array
+            array_push($results['lowCarb'], array( // add to new array
                 //'made up name' => wp function
                     'title' => get_the_title(),
                     'link' => get_the_permalink(),
@@ -80,7 +80,8 @@ function recipeSearchResults($data){
                     'type' => get_field('type'),
                     'carbs' => get_field('carbohoydrates'),
                     'sugar' => get_field('sugar'),
-                    'calories' => get_field('calories')
+                    'calories' => get_field('calories'),
+                    'category' => 'drink'
                 ));
         }
     }
