@@ -1,0 +1,12 @@
+.single{
+    *--title{
+        color: $color-white;
+    }
+    &--ingrediants, &--instructions{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        padding:1.2em;
+        text-align: left;
+    }
+}

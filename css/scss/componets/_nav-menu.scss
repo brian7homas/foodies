@@ -6,7 +6,10 @@
     display:flex;
     justify-content: flex-end;
     height: 50vh;
+    display:none;
+    
     &__wrapper{
+        
         border-top-left-radius: 15px;
         border-bottom-left-radius: 15px;
         display: inline-flex;
@@ -20,6 +23,7 @@
     
         
     a{
+        
         border-top-left-radius: 25px;
         border-top-right-radius: 25px;
         font-size: 1.2rem;

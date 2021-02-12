@@ -4,7 +4,6 @@
 <div class="hero"  >
     
     <div class="hero__wrapper" data-barba="container" data-barba-namespace="front-page" >
-    front page
         <?php 
             $recipeTypeKeto = new WP_Query( array(
                 'posts_per_page' => 2,
