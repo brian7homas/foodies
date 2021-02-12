@@ -1,12 +1,12 @@
 const tl = gsap.timeline()
 const animateTab = (current) =>{
-  return tl.to('.current',{ top: '-17em', height: '100vh'})
+  return tl.to('.current',{ top: '-17em', height: '100vh', autoAlpha:1})
 }
 const animateIn = (container) =>{
-  return tl.from(container, { duration: 1,   yPercent: 100})
+  return tl.from(container, { duration: 1,   yPercent: 100, autoAlpha: 0})
 }
 const animateOut = (container, done) =>{
-  return tl.to(container, { duration: 1, yPercent:100,onComplete: ()=>done() })
+  return tl.to(container, {autoAlpha:0, duration: 1, yPercent:100,onComplete: ()=>done() })
 }
 
 barba.init({

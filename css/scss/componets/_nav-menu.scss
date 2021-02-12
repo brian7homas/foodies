@@ -1,21 +1,20 @@
 .nav-menu{
-    
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     bottom:0;
-    // display:none;
-    // height: 30vh;
-    // top:0em;
-    // position:relative;
-    // bottom:-33em;
+    width:100vw;
+    display:flex;
+    justify-content: flex-end;
+    height: 50vh;
     &__wrapper{
-        
-        // display: flex;
-        // flex-direction: column;
-        // position: relative;
-        // width: 100vw;
-        // overflow:visible;
-        // top:0;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        display: inline-flex;
+        background-color: rgba($color-black, .5);
+        justify-content: space-around;
+        // margin-right: 2em;
+        text-align:right;
+        flex-direction: column;
     }
     
     
@@ -26,10 +25,11 @@
         font-size: 1.2rem;
         position: relative; 
         text-decoration: none;
+        list-style: none;
         
         // ALL RECIPES
         &:nth-child(1){
-            background-color: $color-primary-4;
+            //background-color: $color-primary-4;
             border-width: 5px;
             z-index: 2;
             // height:100vh;
@@ -37,7 +37,7 @@
         }
         // KETO RECIPES
         &:nth-child(2){
-            background-color: $color-primary-3;
+            //background-color: $color-primary-3;
             border-width: 5px;
             z-index: 3;
             //height:100vh;
@@ -46,7 +46,7 @@
         }       
         // LOW CARB RECIPES
         &:nth-child(3){
-            background-color: $color-primary-2;
+            //background-color: $color-primary-2;
             border-width: 5px;
             z-index: 4;
             //height:100vh;
@@ -56,7 +56,7 @@
         }
         // HOME
         &:nth-child(4){
-            background-color: $color-primary;
+            //background-color: $color-primary;
             border-width: 5px;
             z-index: 4;
             //height:100vh;
@@ -70,10 +70,10 @@
     &__item{
         color: white;
         display:block;
-        padding: 8px 15px;
+        padding: 8px 18px;
         height: 3rem;
         // position: absolute;
-        width: 100vw;
+        
         
         
     }

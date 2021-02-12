@@ -50,7 +50,9 @@ class navbarToggle{
         })
     }
     slideUp(){
-        this.toggle.from(this.menuItemsArray, { duration: .3, top: '10em', opacity:1, stagger: .2, })
+        this.toggle.fromTo(this.navContainer, {duration: .2,  opacity: 0}, { opacity: 1})
+                    .from(this.menuItemsArray, .3, { autoAlpha: 0, duration: .3, top: '10em', opacity:1, stagger: .2, })
+                    
                     
     }
     

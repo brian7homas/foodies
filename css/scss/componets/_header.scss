@@ -1,9 +1,9 @@
 .header{
     background-color: transparent;
-    display: inline-flex;
+    display: block;
     height: 100vh;
     position:fixed;
-    align-items: flex-end;
+    //align-items: flex-end;
     z-index: 3;
 }
 header{

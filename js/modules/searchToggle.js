@@ -1,7 +1,10 @@
-// import searchOverlay from "./searchOverlay"
+
 
 class searchToggle{
     constructor(){
+        
+        
+        
         this.body = document.querySelector('body')
         this.addOverlay()
         this.span = document.querySelector('.search-bar__btn')
@@ -13,7 +16,10 @@ class searchToggle{
         this.toggleIn()
         this.events()
         this.isWaiting = false
-        this.results= document.querySelector('#results') 
+        this.foodResults= document.querySelector('#all-food-items') 
+        this.drinkResults = document.querySelector('#all-drink-items')
+        this.generalInfo = document.querySelector('#other')
+        
         //keep loading from restarting timeer
         this.previousValue
         //var used to select all input and textareas
@@ -30,67 +36,101 @@ class searchToggle{
         this.input.addEventListener("keyup", ()=>this.typingLogic())
     }
     typingLogic(){
+        
         if(this.input.value != this.previousValue){
             clearTimeout(this.typingTimer) //reset the timer
-            if(this.input.value != ''){
+            this.foodResults.innerHTML = ''
+            this.drinkResults.innerHTML = ''
+            this.generalInfo.innerHTML = ''
+            if(this.input.value != '' ){
                 if(!this.isWaiting){
                     this.results = document.querySelector('#results') 
                     this.results.innerHTML = "<div class='is-waiting'>Getting results ..</div>"
                     this.isWaiting = true
                 }
                 this.typingTimer = setTimeout(()=>{
-                    let normalRecipes = fetch(mainData.root_url+'/wp-json/wp/v2/recipe?search='+this.input.value)
-                    let ketoRecipes = fetch(mainData.root_url+'/wp-json/wp/v2/keto?search='+this.input.value)
-                    let lowCarbRecipes = fetch(mainData.root_url+'/wp-json/wp/v2/low-carb?search='+this.input.value)
-                    let drinkRecipes = fetch(mainData.root_url+'/wp-json/wp/v2/drink?search='+this.input.value)
-                    Promise.all([ketoRecipes , lowCarbRecipes,  normalRecipes, drinkRecipes])
+                    let customRoute = fetch(mainData.root_url+'/wp-json/recipe/v1/search?term='+this.input.value)
+                    Promise.all([customRoute])
                     .then( recipes =>{
-                        
-                        //returned promise from response obj
                         recipes.forEach(recipe =>{
-                            // file.json is a promise passed into the display function
-                            // console.log(recipe.json())  
+                            // console.log(recipe)
                             display( recipe.json() )
-                        })
-                        
+                        }) 
                     })
-                    .catch(err=>{
-                        console.log(err)
-                        
-                    })
-                    
                     // display is being called twice
                     let display = (prom) =>{
-                        
                         // wait until promise is resolved
                         prom.then(data=>{
-                            console.log(data)
-                            if(data.length != 0 && data != 'undefined'){
-                                console.log(data)
-                                var combine = new Array() 
-                                combine.concat(data)
-                                //console.log(combine)
-                                //console.log("there is data")
-                                //console.log(data[0].id)
-                                //console.log(data[0].acf.image)
-                                
-                                var imgURL = data[0].acf.image
-                                var link = data[0].link
-                                var title = data[0].title.rendered
-                                var type = data[0].type
-                                var carbs = data[0].acf.carbohoydrates
-                                this.results.innerHTML += `<div class="search">
-                                                            <li class="search__list-item" ">
-                                                            <img class="search__img" src="${imgURL}" alt="no img available"/>
-                                                                <div class="search__description">
-                                                                    <a href="${link}"><h2 class="search__description--title">${title}</h2></a>
-                                                                    <h4 class="search__description--type" >Type: ${type}</h4>        
-                                                                    <h4 class="search__description--carbs" >Carbs: ${carbs}</h4>        
-                                                                </div>
-                                                            </li>
-                                                        </div>`
-                                
+                            // parameters
+                            //.title)
+                            //.link)
+                            //.img)
+                            //.carbs)
+                            //? data contains all defined arrays in             ./inc/search-route.php
+                            // console.log(data.generalInfo)
+                            // console.log(data.lowCarb)
+                            // console.log(data.keto)
+                            // console.log(data.normal)
+                            // console.log(data.drinks)
+                            
+                            if(data.generalInfo !=0){
+                                data.generalInfo.forEach(element => {
+                                    this.generalInfo.innerHTML += `<li class="search__list-item">
+                                                                            <div class="search__description">
+                                                                                <a href="${element.link}"><h2 class="search__description--title">${element.title}</h2></a>
+                                                                                
+                                                                                <h4 class="search__description--carbs" >Posts:  ${element.post}</h4>        
+                                                                            </div>
+                                                                    </li>`
+                                });
+                            }else{
+                                this.generalInfo.innerHTML = "No results for misc inforamtion"
                             }
+                            
+                            
+                            
+                            if(data.drinks !=0){
+                                console.log(data.drinks)
+                                data.drinks.forEach(element => {
+                                    console.log(element.category)
+                                this.drinkResults.innerHTML += `<li class="search__list-item">
+                                                                    <img class="search__img" src="${element.img}" alt="no img available"/>
+                                                                        <div class="search__description">
+                                                                            <a href="${element.link}"><h2 class="search__description--title">${element.title}</h2></a>
+                                                                            <h4 class="search__description--type" >Type: ${element.type}</h4>        
+                                                                            <h4 class="search__description--carbs" >Carbs: ${element.carbs}</h4>        
+                                                                        </div>
+                                                                </li>`
+                                });
+                            }else{
+                                this.drinkResults.innerHTML = "No drink recipes to show"
+                            }
+                            
+                            
+                            
+                            //all recipes in normal lowCarb and keto
+                            const foodRecipes = data.normal.concat(data.lowCarb.concat(data.keto))
+                            if(foodRecipes != 0 ){
+                                foodRecipes.forEach(element => {
+                                    // console.log(element)
+                                    // console.log(element.title)
+                                    // console.log(element.type)
+                                    // console.log(element.link)
+                                    this.foodResults.innerHTML += ` <li class="search__list-item">
+                                                                    <img class="search__img" src="${element.img}" alt="no img available"/>
+                                                                        <div class="search__description">
+                                                                            <a href="${element.link}"><h2 class="search__description--title">${element.title}</h2></a>
+                                                                            <h4 class="search__description--type" >Type: ${element.type}</h4>        
+                                                                            <h4 class="search__description--carbs" >Carbs: ${element.carbs}</h4>        
+                                                                        </div>
+                                                                </li>`
+                                });
+                            }else{
+                                this.foodResults.innerHTML = "No food results to show"
+                            }
+                            
+                            
+                            this.isWaiting = false
                             
                         })
                         .catch(err=>{
@@ -100,18 +140,21 @@ class searchToggle{
                     }
                     this.results.innerHTML = "Results are here"
                     this.isWaiting = false 
-                },850)
+                },450)
             }else{
-                this.results.innerHTML = ' '
+                this.foodResults.innerHTML = ''
+                this.drinkResults.innerHTML = ''
+                this.generalInfo.innerHTML = ''
                 this.isWaiting = false
             }
-            
-            
+            this.previousValue = this.input.value
         }
-        this.previousValue = this.input.value
     }
     
     //METHODS
+    deleteKeyevent(e){
+        console.log(e.keyCode);
+    }
     keyDown(e){
         if(e.keyCode == 83 && this.searchToggle.reversed() ){
             this.searching()
@@ -148,7 +191,17 @@ class searchToggle{
                         <h1 class="search-overlay--active__headline">Search recipes</h1>
                     </div>
                     <div class="container" >
-                        <div id='results' class="search-overlay--active__results">
+                        <div  class="search-overlay--active__results">
+                            <div id="results"></div>
+                            <div id='all-food-items'>
+                                <h2>All food items</h2>
+                            </div>
+                            <div id='all-drink-items'>
+                                <h2>All drink items</h2>
+                            </div>
+                            <div id='other'>
+                                <h2>Misc</h2>
+                            </div>
                         </div>
                     </div>
                 </div>`)
