@@ -14,13 +14,17 @@
 @import './layout/search';
 
 
-@import './componets/btn';
 
-@import './componets/header';
-@import './componets/nav-menu';
-@import './componets/nav-toggle';
-@import './componets/recipe-item';
 
 @import './pages/hero';
 @import './pages/page';
 @import './pages/archive-recipe';
+@import './pages/single-recipe';
+
+
+@import './componets/btn';
+@import './componets/header';
+@import './componets/nav-menu';
+@import './componets/nav-toggle';
+@import './componets/recipe-item';
+@import './componets/single';

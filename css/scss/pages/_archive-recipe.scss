@@ -2,15 +2,23 @@
     display:block;
     color:white;
     z-index: -1;
+    
     &__wrapper{    
-        // height:100vh;
-        // background-color: $color-primary-4;
+        
         margin: 0 auto;
         max-width: 100%;
         display:grid;
         gap:3px 2px;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
+        
+        @include respond-to(medium-landscape-568){
+            // width:90%; 
+            // width:80%; 
+            width:50%; 
+        }
+        
+        
         
         
     }
