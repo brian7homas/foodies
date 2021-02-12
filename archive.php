@@ -2,15 +2,13 @@
     get_header();
 ?>
 <div class="recipe-archive"  >
-    <div class="recipe-archive__wrapper" data-barba="container" data-barba-namespace="arvhive" >
+    <div class="recipe-archive__wrapper" data-barba="container" data-barba-namespace="archive" >
+    recipe archive
             <?php 
                 while(have_posts()): 
                     the_post();
                 ?>
-                <div class="recipe-archive__item" style="background-image: linear-gradient(to left bottom, rgba(27, 67,50, .1), rgba(82, 183, 136, 1)),url('<?php echo get_field('image');?>');">
-                    <!-- <h1 class="recipe-item__ingrediants"><?php// echo the_content(); ?></h1> -->
-                    <!-- <p class="recipe-item__instructions" ><?php //echo get_field('instructions');?></p> -->
-                    
+                <div id="<?php echo the_ID();?>" class="recipe-archive__item" style="background-image: linear-gradient(to left bottom, rgba(27, 67,50, .2), rgba(82, 183, 136, 1)),url('<?php echo get_field('image');?>');">
                     <h1 class="recipe-item__title" >
                         <?php echo the_title();?>
                     </h1>

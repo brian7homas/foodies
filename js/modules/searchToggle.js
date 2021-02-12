@@ -1,7 +1,10 @@
-// import searchOverlay from "./searchOverlay"
+
 
 class searchToggle{
     constructor(){
+        
+        
+        
         this.body = document.querySelector('body')
         this.addOverlay()
         this.span = document.querySelector('.search-bar__btn')

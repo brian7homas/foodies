@@ -1,19 +1,20 @@
 .hero{
     display:block;
-    //background-color: $color-primary-4;
+    
     color:white;
     position: relative;
     z-index: 2;
     &__wrapper{
-        width: 100vw;
+        // background-color: $color-primary-4;
+        // width: 100vw;
         height: 100vh;
         // display:flex;
         // flex-direction: column;
         // justify-content: center;
         // align-items: center;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
-        background-color: $color-primary-4;
+        // border-top-left-radius: 20px;
+        // border-top-right-radius: 20px;
+        // background-color: $color-primary-4;
         
         p{
             padding: .5em 2em;

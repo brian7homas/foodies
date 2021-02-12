@@ -1,8 +1,10 @@
+@import './abstracts/variables';
+@import './abstracts/media_queries/iphone';
+
 @import './base/global';
 @import './base/type';
 
-@import './abstracts/variables';
-@import './abstracts/media_queries/iphone';
+
 
 @import './utils/container';
 @import './utils/hidden';

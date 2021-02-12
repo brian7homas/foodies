@@ -9,7 +9,6 @@
   </head>
   <body data-barba="wrapper"  <?php body_class(); ?>>
   
-  
   <header class="header">
     <div class="header__wrapper" >
     
@@ -23,6 +22,7 @@
       <div class="nav-toggle">
         <button class="btn__nav">Menu</button>
       </div>
+      <?php navbar();?>
     </div>
   </header>
   
