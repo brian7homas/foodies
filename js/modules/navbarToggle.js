@@ -8,11 +8,35 @@ class navbarToggle{
         this.navContainer = document.querySelector('.nav-menu')
         this.toggle = gsap.timeline({ reversed:false, paused: true})
         this.pageContainer = document.querySelector('div[data-barba="container"]')
+        
+        //make a function that adds event listener to window 
+        //run slideUp() only when the window size is less than 569px
+        this.width = window.innerWidth
+        this.height = window.innerHeight
+
+        window.onresize = ()=>this.windowEvent()
         this.slideUp()
+        
         this.events()
         // console.log(this.menuItemsArray)             TEST
-        this.iterate()
+        //this.iterate()
         
+    }
+    windowEvent(){
+        if(this.height == window.innerHeight){
+            console.log('same height')
+        }
+        if(this.height != window.innerHeight && this.width == window.innerWidth){
+            this.height = window.innerHeight
+            console.log('height changeing when width does not')
+        }else if(this.height != window.innerHeight && this.width != window.innerWidth){
+            this.width == window.innerWidth
+            if(this.width > 568){
+                console.log('remove navbar animation')
+            }
+            console.log('changing ')
+        }
+            
     }
     events(){
         this.btn.addEventListener("click" , ()=>this.menuToggle())

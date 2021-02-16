@@ -1,0 +1,10 @@
+
+@mixin respond-to($media){
+    //?iphone 4, 4s, se
+    @if $media == handhelds-portrait-480 {
+        @media screen and (max-device-width: 480px) and (orientation:portrait) { @content; }
+    }    
+    @else if $media == handhelds-landscape-480 {
+        @media screen and (max-device-width: 480px) and (orientation:landscape) { @content; }
+    }
+}

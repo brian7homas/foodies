@@ -15,7 +15,7 @@ $break-1024: 1024px;
         @media only screen 
             and (min-width: $break-320) 
             and (max-width: $break-480)
-            and (-webkit-min-device-pixel-ratio: 1)
+            and (-webkit-min-device-pixel-ratio: 2)
             and ( orientation: portrait)
             { @content; }
         }
