@@ -1,15 +1,22 @@
 .nav-menu{
-    position: fixed;
-    z-index: 2;
-    bottom:0;
-    width:100vw;
-    display:flex;
-    justify-content: flex-end;
-    height: 50vh;
-    display:none;
     
+    @include respond-to(mobile-portrait){
+        position: fixed;
+        z-index: 2;
+        bottom:0;
+        width:100vw;
+        justify-content: flex-end;
+        height: 50vh;
+        display:none;
+    }
+    @include respond-to(mobile-landscape){
+        position:relative;
+    }
+    @include respond-to(large-screen){
+    position: relative;
+    display:block;
+    }
     &__wrapper{
-        
         border-top-left-radius: 15px;
         border-bottom-left-radius: 15px;
         display: inline-flex;
@@ -19,9 +26,6 @@
         text-align:right;
         flex-direction: column;
     }
-    
-    
-        
     a{
         
         border-top-left-radius: 25px;

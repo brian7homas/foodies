@@ -1,0 +1,46 @@
+/* min-width 1025px, large screens */
+/* min-width 1024px and max-width 1440px, use when QAing large screen-only issues */
+
+$break-1024: 64.063em;
+$break-1440: 90em;
+$break-568: 569px;
+$break-480: 480px;
+
+@mixin respond-to($media){
+    @if $media == larger-screen{
+        @media only screen 
+            and (min-width: $break-1024 + 1) 
+            and (max-width: $break-1440)
+            { @content;} 
+    }
+    @else if $media == large-screen{
+        @media only screen 
+            and (min-width: $break-1024) 
+            { @content; } 
+    }
+    @else if $media == tablet-portrait{
+        @media screen 
+            and (min-device-width: $break-480 + 1) 
+            and (orientation:portrait) 
+            { @content; }
+    }
+    @else if $media == tablet-landscape{
+        @media screen 
+            and (min-device-width: $break-568 + 1) 
+            and (orientation:landscape) 
+            { @content; }
+    }
+    
+    @else if $media == mobile-portrait{
+        @media screen 
+            and (max-device-width: $break-480) 
+            and (orientation:portrait) 
+            { @content; }
+    }
+    @else if $media == mobile-landscape{
+        @media screen 
+            and (max-device-width: $break-568) 
+            and (orientation:landscape) 
+            { @content; }
+    }
+}

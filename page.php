@@ -3,6 +3,7 @@ get_header();
 ?>
 
 <div class="page"  >
+    <p>Page -- keto</p>
     <div class="page__wrapper" data-barba="container" data-barba-namespace="page" >
             <?php 
                 $recipeTypeKeto = new WP_Query( array(

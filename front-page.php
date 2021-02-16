@@ -9,10 +9,11 @@
         
             <?php 
                 $recipeTypeKeto = new WP_Query( array(
-                    'posts_per_page' => 2,
+                    'posts_per_page' => -1,
                     'post_type' => 'keto',
                     
                 ));?>
+            <h1>Keto Recipes</h1>
             <div class="recipe-archive">
                 <div class="recipe-archive__wrapper">
                     <?php
@@ -40,9 +41,10 @@
             </div>
             <?php
             $recipeTypeLowCarb = new WP_Query( array(
-                'posts_per_page' => 2,
+                'posts_per_page' => -1,
                 'post_type' => 'low-carb',
             )); ?>
+            <h1>Low Carb Recipes</h1>
             <div class="recipe-archive">
                 <div class="recipe-archive__wrapper">
                     <?php
@@ -71,9 +73,10 @@
             </div>
             <?php
             $recipeTypeNormal = new WP_Query( array(
-                'posts_per_page' => 2,
+                'posts_per_page' => -1,
                 'post_type' => 'recipe',
             )); ?>
+            <h1>Normal Recipes</h1>
             <div class="recipe-archive">
                 <div class="recipe-archive__wrapper">
                     <?php
@@ -102,9 +105,10 @@
             </div>
             <?php
             $recipeTypeDrinks = new WP_Query( array(
-                'posts_per_page' => 2,
+                'posts_per_page' => -1,
                 'post_type' => 'drink', 
             )); ?>
+            <h1>Drink Recipes</h1>
             <div class="recipe-archive">
                 <div class="recipe-archive__wrapper">
                     <?php 
