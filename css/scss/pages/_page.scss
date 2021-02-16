@@ -1,45 +1,5 @@
 .page{
     
-    // base mobile styles
-    @include respond-to(handhelds-portrait-480){
-        display:block;
-        color:white;
-        position:relative;
-        z-index: -1;
-        overflow-y: scroll;
-    }
-    // for resizing window
-    @include respond-to(handhelds-landscape-480){
-        color: red;
-    }
-    @include respond-to(medium-portrait-568){
-        color:violet;
-    }
-    // phone landscape
-    @include respond-to(medium-landscape-568){
-        color:turquoise;
-    }
-    @include respond-to(medium-landscape-667){
-        color: blue;
-    }
-    @include respond-to(medium-landscape-736){
-        color:orange;
-    }
-    // ipad portrait
-    @include respond-to(medium-portrait-812){
-        color:yellow;
-    }
-    @include respond-to(medium-landscape-812){
-        color:firebrick;
-    }
-    
-    @include respond-to(medium-portrait-975){
-        color:gold;
-    }
-    @include respond-to(medium-portrait-1024){
-        color:ghostwhite;
-    }
-    
     &__wrapper{
         height: 100vh;
         // background-color: $color-primary-4;

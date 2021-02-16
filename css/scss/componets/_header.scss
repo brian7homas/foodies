@@ -5,6 +5,9 @@
     position:fixed;
     //align-items: flex-end;
     z-index: 3;
+    @include respond-to(large-screen){
+        height: 10vh;
+    }
 }
 header{
     position:relative;
