@@ -6,13 +6,16 @@ function navbar(){?>
     <nav class="nav-menu">
           <ul class="nav-menu__wrapper">
             <a href="<?php echo get_post_type_archive_link('recipe');?>" class="nav-menu__item">
-              <li>All Recipes</li>
+              <li>Normal Recipes</li>
             </a>
             <a href="<?php echo site_url('/keto-recipes')?>" class="nav-menu__item">
               <li>Keto Recipes</li>
             </a>
             <a href="<?php echo site_url('/low-carb-recipes')?>" class="nav-menu__item">
               <li>Low Carb Recipes</li>
+            </a>
+            <a href="<?php echo get_post_type_archive_link('drink');?>" class="nav-menu__item">
+              <li>Drink recipes</li>
             </a>
             <a href="<?php echo site_url('/home')?>" class="nav-menu__item">
               <li>Home</li>
@@ -36,8 +39,8 @@ function main_theme_files(){
       } else {
         //echo "not f-u.local";
         wp_enqueue_script('our-vendors-js', get_theme_file_uri('/bundled-assets/undefined'), NULL, '1.1', true);
-        wp_enqueue_script('main-js', get_theme_file_uri('/bundled-assets/scripts.007a64a0ec3035075114.js'), NULL, '1.0', true);
-        wp_enqueue_style('our-main-styles', get_theme_file_uri('/bundled-assets/styles.007a64a0ec3035075114.css'));
+        wp_enqueue_script('main-js', get_theme_file_uri('/bundled-assets/scripts.7ea51d8fcf5864882d49.js'), NULL, '1.0', true);
+        wp_enqueue_style('our-main-styles', get_theme_file_uri('/bundled-assets/styles.7ea51d8fcf5864882d49.css'));
       }
     //runs regardless of environment
     wp_localize_script( 'main-js', 'mainData', array(

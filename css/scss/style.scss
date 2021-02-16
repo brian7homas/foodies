@@ -8,6 +8,7 @@
 
 @import './utils/container';
 @import './utils/hidden';
+@import './utils/recipe-container';
 
 @import './layout/search-bar';
 @import './layout/search-overlay';
@@ -18,7 +19,7 @@
 
 @import './pages/hero';
 @import './pages/page';
-@import './pages/archive-recipe';
+@import './pages/recipe-archive';
 @import './pages/single-recipe';
 
 

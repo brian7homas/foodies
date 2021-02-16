@@ -1,26 +1,23 @@
 .hero{
     display:block;
-    
-    color:white;
+    color:$color-black;
     position: relative;
     z-index: 2;
+    padding: 0em 3em;
     &__wrapper{
-        // background-color: $color-primary-4;
-        // width: 100vw;
+        margin:0 auto;
         height: 100vh;
-        // display:flex;
-        // flex-direction: column;
-        // justify-content: center;
-        // align-items: center;
-        // border-top-left-radius: 20px;
-        // border-top-right-radius: 20px;
-        // background-color: $color-primary-4;
-        
+        max-width: 908px;
         p{
             padding: .5em 2em;
         }
     }
     h1{
         font-weight: 300;
+    }
+    &__header{
+        color: $color-white;
+        font-size:2rem;
+        text-align: center;
     }
 }
