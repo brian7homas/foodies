@@ -8,10 +8,10 @@ function navbar(){?>
             <a href="<?php echo get_post_type_archive_link('recipe');?>" class="nav-menu__item">
               <li>Normal Recipes</li>
             </a>
-            <a href="<?php echo site_url('/keto-recipes')?>" class="nav-menu__item">
+            <a href="<?php echo get_post_type_archive_link('keto');?>" class="nav-menu__item">
               <li>Keto Recipes</li>
             </a>
-            <a href="<?php echo site_url('/low-carb-recipes')?>" class="nav-menu__item">
+            <a href="<?php echo get_post_type_archive_link('low-carb');?>" class="nav-menu__item">
               <li>Low Carb Recipes</li>
             </a>
             <a href="<?php echo get_post_type_archive_link('drink');?>" class="nav-menu__item">
