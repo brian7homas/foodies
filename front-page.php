@@ -21,20 +21,22 @@
                             $recipeTypeKeto->the_post();
                             // echo the_title();
                             // echo the_field('type'); ?>
-                            <div id="<?php echo the_ID();?>" class="recipe-archive__item" style="background-image: linear-gradient(to left bottom, rgba(27, 67,50, .2), rgba(82, 183, 136, 1)),url('<?php echo get_field('image');?>');">
-                                <h1 class="recipe-item__title" >
-                                    <?php echo the_title();?>
-                                </h1>
-                                <h2 class="recipe-item__type" >
-                                    <p>Type: </p><?php echo get_field('type');?>
-                                </h2>
-                                <h4 class="recipe-item__calories" >
-                                    <p>Cals: </p><?php echo get_field('calories');?>
-                                </h4>
-                                <h4 class="recipe-item__carbs" >
-                                    <p>Carbs: </p><?php echo get_field('carbohoydrates');?>
-                                </h4>
-                            </div>    
+                            <a href="<?php the_permalink();?>">
+                                <div id="<?php echo the_ID();?>" class="recipe-archive__item" style="background-image: linear-gradient(to left bottom, rgba(27, 67,50, .2), rgba(82, 183, 136, 1)),url('<?php echo get_field('image');?>');">
+                                    <h1 class="recipe-item__title" >
+                                        <?php echo the_title();?>
+                                    </h1>
+                                    <h2 class="recipe-item__type" >
+                                        <p>Type: </p><?php echo get_field('type');?>
+                                    </h2>
+                                    <h4 class="recipe-item__calories" >
+                                        <p>Cals: </p><?php echo get_field('calories');?>
+                                    </h4>
+                                    <h4 class="recipe-item__carbs" >
+                                        <p>Carbs: </p><?php echo get_field('carbohoydrates');?>
+                                    </h4>
+                                </div>    
+                            </a>
                         <?php
                         }   ?>
                 </div>
@@ -52,21 +54,22 @@
                         $recipeTypeLowCarb->the_post();
                         // echo the_title();
                         // echo the_field('type'); ?>
-                        
-                        <div id="<?php echo the_ID();?>" class="recipe-archive__item" style="background-image: linear-gradient(to left bottom, rgba(27, 67,50, .2), rgba(82, 183, 136, 1)),url('<?php echo get_field('image');?>');">
-                            <h1 class="recipe-item__title" >
-                                <?php echo the_title();?>
-                            </h1>
-                            <h2 class="recipe-item__type" >
-                                <p>Type: </p><?php echo get_field('type');?>
-                            </h2>
-                            <h4 class="recipe-item__calories" >
-                                <p>Cals: </p><?php echo get_field('calories');?>
-                            </h4>
-                            <h4 class="recipe-item__carbs" >
-                                <p>Carbs: </p><?php echo get_field('carbohoydrates');?>
-                            </h4>
-                        </div>
+                        <a href="<?php the_permalink(); ?>">
+                            <div id="<?php echo the_ID();?>" class="recipe-archive__item" style="background-image: linear-gradient(to left bottom, rgba(27, 67,50, .2), rgba(82, 183, 136, 1)),url('<?php echo get_field('image');?>');">
+                                <h1 class="recipe-item__title" >
+                                    <?php echo the_title();?>
+                                </h1>
+                                <h2 class="recipe-item__type" >
+                                    <p>Type: </p><?php echo get_field('type');?>
+                                </h2>
+                                <h4 class="recipe-item__calories" >
+                                    <p>Cals: </p><?php echo get_field('calories');?>
+                                </h4>
+                                <h4 class="recipe-item__carbs" >
+                                    <p>Carbs: </p><?php echo get_field('carbohoydrates');?>
+                                </h4>
+                            </div>
+                        </a>
                         <?php
                     } ?>
                 </div>
@@ -84,20 +87,22 @@
                         $recipeTypeNormal->the_post();
                         // echo the_title();
                         // echo the_field('type'); ?>    
-                        <div id="<?php echo the_ID();?>" class="recipe-archive__item" style="background-image: linear-gradient(to left bottom, rgba(27, 67,50, .2), rgba(82, 183, 136, 1)),url('<?php echo get_field('image');?>');">
-                            <h1 class="recipe-item__title" >
-                                <?php echo the_title();?>
-                            </h1>
-                            <h2 class="recipe-item__type" >
-                                <p>Type: </p><?php echo get_field('type');?>
-                            </h2>
-                            <h4 class="recipe-item__calories" >
-                                <p>Cals: </p><?php echo get_field('calories');?>
-                            </h4>
-                            <h4 class="recipe-item__carbs" >
-                                <p>Carbs: </p><?php echo get_field('carbohoydrates');?>
-                            </h4>
-                        </div>
+                        <a href="<?php the_permalink();?>">
+                            <div id="<?php echo the_ID();?>" class="recipe-archive__item" style="background-image: linear-gradient(to left bottom, rgba(27, 67,50, .2), rgba(82, 183, 136, 1)),url('<?php echo get_field('image');?>');">
+                                <h1 class="recipe-item__title" >
+                                    <?php echo the_title();?>
+                                </h1>
+                                <h2 class="recipe-item__type" >
+                                    <p>Type: </p><?php echo get_field('type');?>
+                                </h2>
+                                <h4 class="recipe-item__calories" >
+                                    <p>Cals: </p><?php echo get_field('calories');?>
+                                </h4>
+                                <h4 class="recipe-item__carbs" >
+                                    <p>Carbs: </p><?php echo get_field('carbohoydrates');?>
+                                </h4>
+                            </div>
+                        </a>
                             
                         <?php
                     } ?>
@@ -116,20 +121,22 @@
                         $recipeTypeDrinks->the_post();
                         // echo the_title();
                         // echo the_field('type'); ?>
-                        <div id="<?php echo the_ID();?>" class="recipe-archive__item" style="background-image: linear-gradient(to left bottom, rgba(27, 67,50, .2), rgba(82, 183, 136, 1)),url('<?php echo get_field('image');?>');">
-                            <h1 class="recipe-item__title" >
-                                <?php echo the_title();?>
-                            </h1>
-                            <h2 class="recipe-item__type" >
-                                <p>Type: </p><?php echo get_field('type');?>
-                            </h2>
-                            <h4 class="recipe-item__calories" >
-                                <p>Cals: </p><?php echo get_field('calories');?>
-                            </h4>
-                            <h4 class="recipe-item__carbs" >
-                                <p>Carbs: </p><?php echo get_field('carbohoydrates');?>
-                            </h4>
-                        </div>
+                        <a href="<?php the_permalink(); ?>">
+                            <div id="<?php echo the_ID();?>" class="recipe-archive__item" style="background-image: linear-gradient(to left bottom, rgba(27, 67,50, .2), rgba(82, 183, 136, 1)),url('<?php echo get_field('image');?>');">
+                                <h1 class="recipe-item__title" >
+                                    <?php echo the_title();?>
+                                </h1>
+                                <h2 class="recipe-item__type" >
+                                    <p>Type: </p><?php echo get_field('type');?>
+                                </h2>
+                                <h4 class="recipe-item__calories" >
+                                    <p>Cals: </p><?php echo get_field('calories');?>
+                                </h4>
+                                <h4 class="recipe-item__carbs" >
+                                    <p>Carbs: </p><?php echo get_field('carbohoydrates');?>
+                                </h4>
+                            </div>
+                        </a>
                         <?php
                     }?>
                     </div>
