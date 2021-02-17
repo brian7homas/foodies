@@ -1,6 +1,8 @@
 <?php 
     get_header();
+
 ?>
+archive 
 <div class="recipe-archive"  >
     <div class="recipe-archive__wrapper" data-barba="container" data-barba-namespace="archive" >
             <?php 
