@@ -19,9 +19,9 @@
         </span>
       </div>
       
-      <div class="nav-toggle">
+      <!-- <div class="nav-toggle">
         <button class="btn__nav">Menu</button>
-      </div>
+      </div> -->
       <?php navbar();?>
     </div>
   </header>

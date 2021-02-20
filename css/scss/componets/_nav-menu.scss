@@ -1,5 +1,6 @@
 .nav-menu{
     
+    
     @include respond-to(mobile-portrait){
         position: fixed;
         z-index: 2;
@@ -26,7 +27,7 @@
         width:100vw;
         justify-content: flex-end;
         height: 50%;
-        display:none;
+        // display:none;
     }
     @include respond-to(tablet-landscape){
         position: fixed;
@@ -35,9 +36,10 @@
         width:100vw;
         justify-content: flex-end;
         height: 70%;
-        display:none;
+        // display:none;
     }
     @include respond-to(large-screen){
+        display:flex;
         position: relative;
         width:100vw;
         justify-content: flex-end;
@@ -51,10 +53,10 @@
     &__wrapper{
         border-top-left-radius: 15px;
         border-bottom-left-radius: 15px;
-        display: inline-flex;
+        display: flex;
         background-color: rgba($color-black, .5);
         justify-content: space-around;
-        // margin-right: 2em;
+        align-items: center;
         text-align:right;
         flex-direction: column;
         @include respond-to(large-screen){

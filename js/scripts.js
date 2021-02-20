@@ -9,7 +9,7 @@ import searchOverlay from './modules/searchOverlay'
 
 
 new navBarEvents
-const toggle = new navbarToggle
+// const toggle = new navbarToggle
 const search = new searchToggle
 const magicalSearch = new searchOverlay
 
