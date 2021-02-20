@@ -5,6 +5,9 @@
         padding: 0 4em;
         
     }
+    &__container{
+        justify-content: space-around;
+    }
     &--title{
         color: $color-white;
         font-size:6rem;
@@ -12,6 +15,7 @@
     }
     &--facts__3{
         color:$color-white;
+        font-size:1.5rem;
         p{
             display:flex;
         }
@@ -20,15 +24,17 @@
     &__img{
         background-repeat: no-repeat;
         background-size: cover;
-        background-position:center right ;
+        background-position:center right;
         display:block;
         margin:0 auto;
+        height:50vh;
     }
     
     &__information{
         display:flex;
         color:white;
         z-index: -1;
+        
         &--item{
             background-color:rgba($color-primary-4, .5);
             border-radius: 15px;

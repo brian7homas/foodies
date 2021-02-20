@@ -39,8 +39,8 @@ function main_theme_files(){
       } else {
         //echo "not f-u.local";
         wp_enqueue_script('our-vendors-js', get_theme_file_uri('/bundled-assets/undefined'), NULL, '1.1', true);
-        wp_enqueue_script('main-js', get_theme_file_uri('/bundled-assets/scripts.ff520c18bea1e9064f63.js'), NULL, '1.0', true);
-        wp_enqueue_style('our-main-styles', get_theme_file_uri('/bundled-assets/styles.ff520c18bea1e9064f63.css'));
+        wp_enqueue_script('main-js', get_theme_file_uri('/bundled-assets/scripts.480f3f83db63c142b26e.js'), NULL, '1.0', true);
+        wp_enqueue_style('our-main-styles', get_theme_file_uri('/bundled-assets/styles.480f3f83db63c142b26e.css'));
       }
     //runs regardless of environment
     wp_localize_script( 'main-js', 'mainData', array(
@@ -55,5 +55,8 @@ add_action('wp_enqueue_scripts', 'main_theme_files');
 function foodeez_features(){
   register_nav_menu('headerMenuLocation', 'Header Menu Loaction');
   register_nav_menu('footerMenuLocation', 'Footer menu');
+  add_theme_support( 'post-thumbnails' );
+  add_image_size('contentLandscape', 400, 200, true);
+  add_image_size('contentPortrait', 480, 650, true);
 }
 add_action('after_setup_theme', 'foodeez_features');

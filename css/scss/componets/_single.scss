@@ -2,11 +2,44 @@
     *--title{
         color: $color-white;
     }
-    &--ingrediants, &--instructions{
+    &--instructions{
         display:flex;
         flex-direction: column;
         justify-content: center;
         padding:1.2em;
         text-align: left;
+        figure{
+            //max-width:100%;
+            //margin:0 auto;
+            //display:inline-flex;
+            img{
+                //display:inline-flex; //                img added under content 
+                //justify-content: center;
+            }
+            .wp-block-embed__wrapper{
+                // display: flex;
+                // justify-content: center;
+            }
+        }
+    }
+    &--ingrediants{
+        display:flex;
+        
+        max-height:25vh;
+        width:50%;
+        word-wrap: normal;
+        &__ul{
+            font-size: 1.5rem;
+            display:flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            max-height: 20vh;
+        }
+        &__li{
+            margin:0em 1em ;
+            color:$color-white;
+            list-style: circle;
+        }
+        
     }
 }
