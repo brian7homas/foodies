@@ -337,7 +337,7 @@ a.current {
   position: fixed;
   top: 4em;
   right: 0;
-  padding-right: 3em;
+  padding-right: 1em;
   z-index: 5; }
   /* line 8, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/componets/_nav-toggle.scss */
   .nav-toggle button {
