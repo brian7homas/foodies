@@ -1,6 +1,9 @@
 .single{
     *--title{
         color: $color-white;
+        @include respond-to(mobile-landscape){
+            font-size: 1rem;
+        }
     }
     &--instructions{
         display:flex;
@@ -8,34 +11,27 @@
         justify-content: center;
         padding:1.2em;
         text-align: left;
-        figure{
-            //max-width:100%;
-            //margin:0 auto;
-            //display:inline-flex;
-            img{
-                //display:inline-flex; //                img added under content 
-                //justify-content: center;
-            }
-            .wp-block-embed__wrapper{
-                // display: flex;
-                // justify-content: center;
-            }
-        }
     }
     &--ingrediants{
         display:flex;
-        
         max-height:25vh;
-        width:50%;
         word-wrap: normal;
-        &__ul{
-            font-size: 1.5rem;
+        margin-top:2em;
+        ul{
+            @include respond-to(mobile-portrait){
+                font-size: 1rem;
+            }
+            @include respond-to(mobile-landscape){
+                font-size:.9rem;
+            }
+            
             display:flex;
             flex-wrap: wrap;
             flex-direction: column;
-            max-height: 20vh;
+            max-height: 25vh;
+            max-width:100%;
         }
-        &__li{
+        li{
             margin:0em 1em ;
             color:$color-white;
             list-style: circle;

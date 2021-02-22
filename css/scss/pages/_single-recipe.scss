@@ -1,21 +1,39 @@
 .single-recipe{    
+    padding:1rem;
     &__content{
         color:$color-primary-1;
         text-align: left;
-        padding: 0 4em;
-        
+        padding:.5rem;
     }
     &__container{
-        justify-content: space-around;
+        justify-content: space-evenly;
+        
+        @include respond-to(mobile-landscape){
+            justify-content: flex-start;
+        }
+        max-width: 60rem;
+        
     }
     &--title{
         color: $color-white;
-        font-size:6rem;
         font-weight: 400;
+        @include respond-to(mobile-portrait){
+            font-size:2rem;
+        }
+        @include respond-to(mobile-landscape){
+            font-size: 2.5rem;
+        }
     }
     &--facts__3{
         color:$color-white;
         font-size:1.5rem;
+        margin:auto 2em;
+        @include respond-to(mobile-portrait){
+            font-size:2rem;
+        }
+        @include respond-to(mobile-landscape){
+            font-size: 1rem;
+        }
         p{
             display:flex;
         }
@@ -27,14 +45,17 @@
         background-position:center right;
         display:block;
         margin:0 auto;
-        height:50vh;
+        // height:50vh;
+        @include respond-to(mobile-portrait){
+            max-width: 100%;
+        }
     }
     
     &__information{
         display:flex;
         color:white;
         z-index: -1;
-        
+        margin-top:1em;
         &--item{
             background-color:rgba($color-primary-4, .5);
             border-radius: 15px;
