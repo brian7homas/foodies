@@ -1,16 +1,12 @@
 .header{
     background-color: transparent;
-    height: 100vh;
     position:fixed;
     z-index: 3;
-    @include respond-to(large-screen){
-        height:15vh;
-    }
+    // @include respond-to(large-screen){
+    //     height:15vh;
+    // }
     &__wrapper{
-        display:flex;
-        height: 100%;
-        align-items: center;
-        
+        min-height:100%;
     }
     
 }

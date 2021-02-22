@@ -6,20 +6,14 @@ class navbarToggle{
         this.menuItemsArray = Array.prototype.slice.call(this.navItems)
         this.btn = document.querySelector('.btn__nav')
         this.navContainer = document.querySelector('.nav-menu')
-        this.toggle = gsap.timeline({ reversed:false, paused: true})
+        this.toggle = gsap.timeline({ reversed:true, paused: true})
         this.pageContainer = document.querySelector('div[data-barba="container"]')
-        
-        //make a function that adds event listener to window 
-        //run slideUp() only when the window size is less than 569px
         this.width = window.innerWidth
         this.height = window.innerHeight
-
         window.onresize = ()=>this.windowEvent()
         this.slideUp()
-        
         this.events()
-        // console.log(this.menuItemsArray)             TEST
-        //this.iterate()
+        
         
     }
     windowEvent(){
@@ -36,29 +30,22 @@ class navbarToggle{
             }
             console.log('changing ')
         }
-            
     }
     events(){
-        this.btn.addEventListener("click" , ()=>this.menuToggle())
-        
+        this.btn.addEventListener("click" , (e)=>this.menuToggle(e))
+        this.menuItemsArray.forEach(element => element.addEventListener("click", (e)=>this.menuToggle(e)))
     }
-    menuToggle(){
+    menuToggle(e){
+        console.log(e.target)
         this.toggle.reversed()?this.toggle.play():this.toggle.reverse()
     }
-    iterate(){
-        this.menuItemsArray.forEach(element =>{
-            // console.log(element.classList.contains('current'))           TEST
-            if(element.classList.contains('current')){
-                console.log(element)
-            }else{
-                console.log('no current detected')
-            }
-        })
-    }
+    // removeEvent(){
+    //     this.menuItemsArray.forEach(element => element.removeEvent("click"))
+    // }
     slideUp(){
-        this.toggle.to(this.navContainer, {display:'flex'})
-                    .fromTo(this.navContainer, { duration: .2,  opacity: 0}, { opacity: 1}, "<")
-                    .from(this.menuItemsArray, .3, { autoAlpha: 0, duration: .3, top: '10em', opacity:1, stagger: .2})
+        this.toggle.from(this.navContainer, {display:'none'})
+                    .fromTo(this.navContainer, { duration: .1,  opacity: 0}, { opacity: 1}, "<")
+                    .from(this.menuItemsArray, .2, { autoAlpha: 0, duration: .3,   stagger: .2})
     }
     
 }

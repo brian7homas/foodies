@@ -3,7 +3,9 @@
     position: fixed;
     top: 4em;
     right: 0;
-    padding-right: 1em;
-    
-    
+    padding-right: 3em;
+    z-index: 5;
+    button{
+        cursor: pointer;
+    }
 }
