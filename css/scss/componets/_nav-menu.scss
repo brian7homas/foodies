@@ -1,135 +1,27 @@
 .nav-menu{
-    
-    
-    @include respond-to(mobile-portrait){
-        position: fixed;
-        z-index: 2;
-        bottom:0;
-        width:100vw;
-        justify-content: flex-end;
-        height: 50vh;
-        display:none;
-    }
-    @include respond-to(mobile-landscape){
-        position: fixed;
-        z-index: 2;
-        bottom:0;
-        width:100vw;
-        justify-content: flex-end;
-        height: 50vh;
-        display:none;
-    }
-    @include respond-to(tablet-portrait){
-        position: fixed;
-        z-index: 2;
-        // bottom:0;
-        top:8em;
-        width:100vw;
-        justify-content: flex-end;
-        height: 50%;
-        // display:none;
-    }
-    @include respond-to(tablet-landscape){
-        position: fixed;
-        z-index: 2;
-        bottom:0;
-        width:100vw;
-        justify-content: flex-end;
-        height: 70%;
-        // display:none;
-    }
-    @include respond-to(large-screen){
-        display:flex;
-        position: relative;
-        width:100vw;
-        justify-content: flex-end;
-        padding-right:.7em;
-    
-    }
-    @include respond-to(larger-screen){
-        position: relative;
-        width:100vw;
-    }
     &__wrapper{
-        border-top-left-radius: 15px;
-        border-bottom-left-radius: 15px;
         display: flex;
-        background-color: rgba($color-black, .5);
-        justify-content: space-around;
-        align-items: center;
-        text-align:right;
+        background-color: rgba($color-black, .85);
         flex-direction: column;
-        @include respond-to(large-screen){
-            flex-direction: row;
-            background-color:transparent;
-        }
-        @include respond-to(larger-screen){
-            flex-direction: row;
-            background-color:transparent;
-        }
+        width:100vw;
+        height: 100vh;
+        // justify-content: center;
+        // align-items: center;        
     }
     a{
-        
-        border-top-left-radius: 25px;
-        border-top-right-radius: 25px;
-        font-size: 1.2rem;
+        font-size: 2.2rem;
         position: relative; 
         text-decoration: none;
         list-style: none;
-        
-        // ALL RECIPES
-        &:nth-child(1){
-            //background-color: $color-primary-4;
-            border-width: 5px;
-            z-index: 2;
-            // height:100vh;
-            // bottom:-7em;
-        }
-        // KETO RECIPES
-        &:nth-child(2){
-            //background-color: $color-primary-3;
-            border-width: 5px;
-            z-index: 3;
-            //height:100vh;
-            //bottom:-10em;
-            // top:7em;
-        }       
-        // LOW CARB RECIPES
-        &:nth-child(3){
-            //background-color: $color-primary-2;
-            border-width: 5px;
-            z-index: 4;
-            //height:100vh;
-            //top: 10em;
-            transform-origin: bottom;
-            
-        }
-        // HOME
-        &:nth-child(4){
-            //background-color: $color-primary;
-            border-width: 5px;
-            z-index: 4;
-            //height:100vh;
-            //top: 13em;
-            
-            
-            
-        }
     }
 
     &__item{
         color: white;
         display:block;
-        padding: 8px 18px;
-        height: 3rem;
-        // position: absolute;
-        
-        
-        
+        margin:1em auto;
     }
 }
 a.current{
-    color: red;
-    // height: 100vh;
-    // position: fixed;
+    color: rgba($color-white, .8);
+    text-decoration: underline;
 }
