@@ -2,7 +2,7 @@
     get_header();
 ?>
 <div class="single-recipe"  >
-    <div class="single-recipe__wrapper" data-barba="container" data-barba-namespace="archive" >
+    <div class="single-recipe__wrapper" data-barba="container" data-barba-namespace="single" >
 
         
         

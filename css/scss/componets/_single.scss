@@ -20,6 +20,8 @@
         ul{
             @include respond-to(mobile-portrait){
                 font-size: 1rem;
+                flex-grow: 1;
+                
             }
             @include respond-to(mobile-landscape){
                 font-size:.9rem;

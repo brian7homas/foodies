@@ -2,11 +2,14 @@
     get_header();
 ?>
 
-<div class="hero">
-    <div class="hero__wrapper" data-barba="container" data-barba-namespace="archive">
-    
+<div class="page">
+    <div class="page__wrapper" data-barba="container" data-barba-namespace="archive">
+        <div class="page__header">
+            <h1>All Recipes<br> <small>with no special instructions or ingrediants</small></h1>
+        </div>
             <div class="recipe-archive"  >
             <div class="recipe-archive__wrapper"  >
+                
                     <?php 
                         while(have_posts()): 
                             the_post();

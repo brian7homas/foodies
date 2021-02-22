@@ -3,11 +3,13 @@
     color:$color-black;
     position: relative;
     z-index: 2;
-    padding: 3em;
+    
     
     &__wrapper{
         margin:0 auto;
-        margin-bottom:100px;
+        max-width:65em;
+        margin-bottom:50px;
+        padding-top:3em;
         p{
             padding: .5em 2em;
         }

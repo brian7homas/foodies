@@ -1,9 +1,12 @@
 <?php 
     get_header();
 ?>
-archive recipe
-<div class="hero">
-    <div class="hero__wrapper" data-barba="container" data-barba-namespace="archive">
+
+<div class="page">
+    <div class="page__wrapper" data-barba="container" data-barba-namespace="archive">
+        <div class="page__header">
+            <h1>Drink Recipes</h1>
+        </div>
         <div class="recipe-archive"  >
             <div class="recipe-archive__wrapper" data-barba="container" data-barba-namespace="archive" >
                     <?php 
@@ -11,7 +14,7 @@ archive recipe
                             the_post();
                         ?>
                         <a href="<?php the_permalink()?>">
-                            <div id="<?php echo the_ID();?>" class="recipe-archive__item" style="background-image: linear-gradient(to left bottom, rgba(27, 67,50, .2), rgba(82, 183, 136, 1)),url('<?php echo get_field('image');?>');">
+                            <div id="<?php echo the_ID();?>" class="recipe-archive__item" style="background-image: linear-gradient(to left bottom, rgba(27, 67,50, .5), rgba(82, 183, 136, 1)),url('<?php echo get_field('image');?>');">
                                 <h1 class="recipe-item__title" >
                                     <?php echo the_title();?>
                                 </h1>

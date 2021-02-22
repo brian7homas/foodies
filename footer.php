@@ -7,6 +7,7 @@
                 <li class="footer__nav-menu__item">item 2</li>
                 <li class="footer__nav-menu__item">item 3</li>
             </ul>
+            <p>Wordpress App developed and designed by <a href="www.joyreacher.com">Brian Thomas</a></p>
         </nav>
     </div>
 </footer>

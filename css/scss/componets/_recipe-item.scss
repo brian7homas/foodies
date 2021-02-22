@@ -1,7 +1,5 @@
 .recipe-item{
-    h2, h4{
-        font-weight: 400;
-    }
+    
     &__title{
         color:$color-white;
         font-size:1.4rem;
@@ -13,6 +11,8 @@
         justify-content: space-between;
         font-size:1rem;
         font-weight:400;
-        
+        color:$color-white;
     }
+    
+    
 }

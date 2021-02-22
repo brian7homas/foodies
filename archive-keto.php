@@ -1,9 +1,12 @@
 <?php 
     get_header();
 ?>
-archive recipe
-<div class="hero">
-    <div class="hero__wrapper" data-barba="container" data-barba-namespace="archive">
+
+<div class="page">
+    <div class="page__wrapper" data-barba="container" data-barba-namespace="archive">
+        <div class="page__header">
+            <h1>Keto Recipes</h1>
+        </div>
         <div class="recipe-archive"  >
             <div class="recipe-archive__wrapper" data-barba="container" data-barba-namespace="archive" >
                     <?php 

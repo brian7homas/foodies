@@ -1,5 +1,5 @@
 .single-recipe{    
-    padding:1rem;
+    
     &__content{
         color:$color-primary-1;
         text-align: left;
@@ -7,7 +7,9 @@
     }
     &__container{
         justify-content: space-evenly;
-        
+        @include respond-to(mobile-portrait){
+            justify-content: flex-start;
+        }
         @include respond-to(mobile-landscape){
             justify-content: flex-start;
         }
@@ -30,6 +32,7 @@
         margin:auto 2em;
         @include respond-to(mobile-portrait){
             font-size:2rem;
+            display:none;
         }
         @include respond-to(mobile-landscape){
             font-size: 1rem;
@@ -56,6 +59,7 @@
         color:white;
         z-index: -1;
         margin-top:1em;
+        margin-bottom:6em;
         &--item{
             background-color:rgba($color-primary-4, .5);
             border-radius: 15px;
