@@ -12,7 +12,7 @@
         text-decoration: none;
         list-style: none;
         @include respond-to(mobile-portrait){
-            font-size:2rem;
+            font-size:1.9rem;
         }
         @include respond-to(mobile-landscape){
             font-size: 1.1rem;
