@@ -17,35 +17,32 @@
                                 <h3>Calories: <?php echo get_field('calories');?></h3>
                         </div>
                         <div class="single--ingrediants">
-                            <ul class="single--ingrediants__ul">
-                                <?php 
-                                    $ing = get_field('ingrediants');
-                                    $pieces = explode(" ", $ing);
-                                    foreach($pieces as $piece=>$value){ ?>
-                                        <li class="single--ingrediants__li"><?php echo $pieces[$piece];?></li>
-                                    <?php } ?>
-                            </ul>
+                            
+                                <?php echo get_field('ingrediants');?>
+                            
                         </div>            
                     </div>
                     
             </div>
         </div>
-        
+        <div>
+            <a href="<?php echo get_post_type_archive_link('drink'); ?>"> 
+                Go back
+            </a>
+        </div>
         <div id="<?php echo the_ID();?>" class="single-recipe__information" >
             <div class="single-recipe__information--item">
             
                 
                 <div class="single--instructions">
                     <h2 class="single-recipe__information--headline">Instructions</h2>
-                    <div class="center">
-                        ><?php
-                            the_post_thumbnail('contentLandscape');
-                            the_content(); 
+                    <div >
+                        <?php
+                            echo the_field('instructions');
+                            // the_content(); 
                         ?>
                     </div>
-                    <p>
-                        <?php echo the_field('instructions');?>
-                    </p>
+                    
                     
                 </div>
             
