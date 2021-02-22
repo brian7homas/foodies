@@ -13,6 +13,9 @@ const toggle = new navbarToggle
 const search = new searchToggle
 const magicalSearch = new searchOverlay
 
+//browser test
+var navigator = window.navigator.userAgent
+console.log(navigator)
 
 if (module.hot) {
     module.hot.accept()

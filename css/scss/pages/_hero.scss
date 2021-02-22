@@ -4,10 +4,10 @@
     position: relative;
     z-index: 2;
     padding: 3em;
+    
     &__wrapper{
         margin:0 auto;
-        height: 100vh;
-        // width: 60.5em;
+        margin-bottom:100px;
         p{
             padding: .5em 2em;
         }
@@ -17,7 +17,7 @@
     }
     &__header{
         color: $color-white;
-        font-size:2rem;
-        
+        font-size:1.6rem;
+        margin:0 auto;
     }
 }

@@ -2,7 +2,7 @@
     display:block;
     color:white;
     z-index: -1;
-    padding:3em;
+    // padding:3em;                         make copy of this file to power archive pages
     &__wrapper{    
         
         margin: 0 auto;
@@ -10,7 +10,6 @@
         display:grid;
         gap:3px 2px;
         grid-template-rows: auto;
-        
         @include respond-to(mobile-portrait){
             grid-template-columns: 1fr;    
         }

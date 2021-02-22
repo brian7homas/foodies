@@ -5,7 +5,11 @@
     right: 0;
     padding-right: 1em;
     z-index: 5;
+    @include respond-to(large-screen){
+        padding-right:3em;
+    }
     button{
+        
         cursor: pointer;
     }
 }
