@@ -2,9 +2,6 @@
 
 class searchToggle{
     constructor(){
-        
-        
-        
         this.body = document.querySelector('body')
         this.addOverlay()
         this.span = document.querySelector('.search-bar__btn')
@@ -72,6 +69,7 @@ class searchToggle{
                             // console.log(data.keto)
                             // console.log(data.normal)
                             // console.log(data.drinks)
+                            // console.log(data.desserts)
                             
                             if(data.generalInfo !=0){
                                 data.generalInfo.forEach(element => {
@@ -109,7 +107,7 @@ class searchToggle{
                             
                             
                             //all recipes in normal lowCarb and keto
-                            const foodRecipes = data.normal.concat(data.lowCarb.concat(data.keto))
+                            const foodRecipes = data.normal.concat(data.desserts.concat(data.lowCarb.concat(data.keto)))
                             if(foodRecipes != 0 ){
                                 foodRecipes.forEach(element => {
                                     // console.log(element)
@@ -176,7 +174,7 @@ class searchToggle{
                                                 onComplete:()=>{
                                                 this.searchOverlay.classList.add('search-overlay--active')
                                                 
-                                                // this.body.classList.add('no-scroll')
+                                                // /this.body.classList.add('no-scroll')
                                                 
                                                 this.input.focus()
                                                 
@@ -184,7 +182,6 @@ class searchToggle{
                         
     }
     addOverlay(){
-        console.log("overlay")
         this.body.insertAdjacentHTML("afterend", 
                 `<div class="search-overlay">
                     <div class="search-overlay--active__wrapper">

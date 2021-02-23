@@ -155,7 +155,7 @@ a {
   .hero__wrapper {
     margin: 0 auto;
     max-width: 65em;
-    margin-bottom: 50px;
+    margin-bottom: 120px;
     padding-top: 3em; }
     /* line 13, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/pages/_hero.scss */
     .hero__wrapper p {
@@ -369,27 +369,28 @@ header {
   clear: both; }
   /* line 8, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/componets/_footer.scss */
   .footer__wrapper {
+    margin-top: -100px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100px; }
-  /* line 14, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/componets/_footer.scss */
+  /* line 15, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/componets/_footer.scss */
   .footer__nav-menu {
     font-size: 1rem; }
-    /* line 17, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/componets/_footer.scss */
+    /* line 18, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/componets/_footer.scss */
     .footer__nav-menu__wrapper {
       display: flex;
       justify-content: space-evenly;
       align-items: center; }
-      /* line 22, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/componets/_footer.scss */
+      /* line 23, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/componets/_footer.scss */
       .footer__nav-menu__wrapper li {
         margin: 1em; }
-    /* line 27, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/componets/_footer.scss */
+    /* line 28, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/componets/_footer.scss */
     .footer__nav-menu p {
       text-align: center;
       font-size: .6rem;
       color: #52b788; }
-    /* line 32, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/componets/_footer.scss */
+    /* line 33, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/componets/_footer.scss */
     .footer__nav-menu a {
       color: #52b788; }
 

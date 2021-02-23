@@ -11,7 +11,7 @@ add_action('rest_api_init', 'searchRoutes');
 
 function recipeSearchResults($data){
     $AllRecipes = new WP_Query(array(
-        'post_type' => array('page', 'post', 'recipe', 'keto', 'low-carb', 'drink'),
+        'post_type' => array('page', 'post', 'recipe', 'keto', 'low-carb', 'drink', 'dessert'),
         's' => sanitize_text_field($data['term'])
     ));
     
@@ -20,7 +20,8 @@ function recipeSearchResults($data){
         'normal' => array(),
         'keto' =>array(),
         'lowCarb' =>array(),
-        'drinks'=>array()
+        'drinks'=>array(),
+        'desserts'=>array()
     ); //new array
     
     
@@ -82,6 +83,19 @@ function recipeSearchResults($data){
                     'sugar' => get_field('sugar'),
                     'calories' => get_field('calories'),
                     'category' => 'drink'
+                ));
+        }
+        if(get_post_type() == 'dessert'){
+            array_push($results['desserts'], array( // add to new array
+                //'made up name' => wp function
+                    'title' => get_the_title(),
+                    'link' => get_the_permalink(),
+                    'img' => get_field('image'),
+                    'type' => get_field('type'),
+                    'carbs' => get_field('carbohoydrates'),
+                    'sugar' => get_field('sugar'),
+                    'calories' => get_field('calories'),
+                    'category' => 'dessert'
                 ));
         }
     }
