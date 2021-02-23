@@ -2,6 +2,7 @@
 class navbarToggle{
     constructor(){
         //get all nav menu items
+        this.body = document.querySelector('body')
         this.navItems = document.querySelectorAll('.nav-menu__item')
         this.menuItemsArray = Array.prototype.slice.call(this.navItems)
         this.btn = document.querySelector('.btn__nav')
@@ -36,7 +37,6 @@ class navbarToggle{
         this.menuItemsArray.forEach(element => element.addEventListener("click", (e)=>this.menuToggle(e)))
     }
     menuToggle(e){
-        console.log(e.target)
         this.toggle.reversed()?this.toggle.play():this.toggle.reverse()
     }
     // removeEvent(){
@@ -44,8 +44,10 @@ class navbarToggle{
     // }
     slideUp(){
         this.toggle.from(this.navContainer, {display:'none'})
+                    .to(this.body, {overflow:'hidden'})
                     .fromTo(this.navContainer, { duration: .1,  opacity: 0}, { opacity: 1}, "<")
                     .from(this.menuItemsArray, .2, { autoAlpha: 0, duration: .3,   stagger: .2})
+                    
     }
     
 }
