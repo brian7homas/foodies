@@ -1,5 +1,242 @@
 .single{
-    *--title{
+    &-recipe{
+        &__content{
+            margin:.5em auto;
+            color:$color-primary-1;
+            text-align: left;
+            padding:.5rem;
+            @include respond-to(large-screen){
+                display:flex;
+                justify-content: center;
+            }
+        }
+        &__container{
+            display:grid;
+            grid-template-rows: auto;
+            // grid-template-columns: max-content;
+            // justify-items: center;
+            max-width: 60rem;
+            @include respond-to(mobile-portrait){
+                grid-template-columns: 1fr;
+                row-gap: 3em;
+            }
+            @include respond-to(mobile-landscape){
+                padding: 0em 4em;
+            }
+            @include respond-to(tablet-portrait){
+                grid-template-columns: 1fr 1fr;
+                padding: 0em 5em;
+            }
+            @include respond-to(tablet-landscape){
+                grid-template-columns: 1fr 1fr;
+                padding: 0em 2em;
+                font-size:.8rem;
+            }
+            @include respond-to(tablet-landscape-wide){
+                display:flex;
+                justify-content: space-around;
+                padding: 0em 3em;
+            }
+            @include respond-to(larger-screen){
+                row-gap: 2.5em;
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        &--title{
+            color: $color-white;
+            font-weight: 400;
+            text-align:center;
+            @include respond-to(mobile-portrait){
+                font-size:2rem;
+                padding-top:6em;
+            }
+            @include respond-to(mobile-landscape){
+                font-size: 2.5rem;
+                padding-top:4em;   
+            }
+            @include respond-to(tablet-portrait){
+                font-size: 3.5rem;
+                padding-top:4em;   
+            }
+            @include respond-to(tablet-landscape){
+                font-size:2.7rem;
+                padding-top:3em;
+            }
+            @include respond-to(tablet-landscape-wide){
+                font-size:3.7rem;
+                padding-top:3em;
+            }
+            @include respond-to(large-screen){
+                font-size:3rem;
+            }
+        }
+        &--facts__3{
+            padding-top:1.5em;
+            margin:0 auto;
+            color:$color-white;
+            h3{
+                font-weight:100;
+            }
+            &--carbs,&--type, &--calories{
+                display:flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                p{
+                    color:$color-primary-1;
+                    margin:auto .7em;
+                }
+                @include respond-to(tablet-landscape){
+                    justify-content: center;
+                }
+            }
+            @include respond-to(mobile-portrait){
+                font-size: .9rem;
+                padding:0;
+            }
+            @include respond-to(mobile-landscape){
+                margin:2em;
+                font-size: 1rem;
+            }
+            @include respond-to(tablet-portrait){
+                width: 15em;
+                font-size:1.2rem;
+            }
+            @include respond-to(tablet-landscape){
+                display:grid;
+                grid-template-columns: 1fr 1fr;                                                     // display grid set on each item gives 2cols of 2cols
+                font-size:.8rem;
+                column-gap:1em;
+            }
+            @include respond-to(tablet-landscape-wide){
+                font-size:1.2rem;
+                display:grid;
+                grid-template-columns: 1fr 1fr;                                                     // display grid set on each item gives 2cols of 2cols
+            }
+            @include respond-to(large-screen){
+                display:grid;
+                grid-template-columns: 1fr 1fr;                                                     // display grid set on each item gives 2cols of 2cols
+                font-size:1.2rem;
+                margin-right:5em;
+            }
+            @include respond-to(larger-screen){
+                display:grid;
+                grid-template-columns: 1fr 1fr;                                                     // display grid set on each item gives 2cols of 2cols
+                display:flex;
+                flex-direction: column;
+            }
+            
+        }
+        &--fact-item{
+            p{
+                margin-bottom:.9em;
+            }
+            h3{
+                margin-bottom:.5em;
+                // margin-right:.5em;
+                
+                &:first-child{
+                    // padding-right:2em;
+                    color:$color-primary-3;
+                }
+            }
+            
+            @include respond-to(mobile-portrait){
+                display:flex;
+                justify-content: space-between;   
+                h3{
+                    margin-bottom:.5em;
+                    // margin-right:.5em;
+                    
+                    &:first-child{
+                        padding-right:2em;
+                        color:$color-primary-3;
+                    }
+                }
+            }
+            @include respond-to(mobile-landscape){
+                display: flex;
+                justify-content: space-between;
+            }
+            @include respond-to(tablet-portrait){
+                display: flex;
+                justify-content: space-between;
+            }
+            @include respond-to(tablet-landscape){
+                display:flex;
+                min-width:11em;
+                justify-content: space-between;
+            }
+            @include respond-to(tablet-landscape-wide){
+                max-width:10em;
+                display:flex;
+                justify-content: space-between;
+            }
+            @include respond-to(large-screen){
+                min-width:12em;
+                display:grid;
+                grid-template-columns: 1fr 1fr;                                                     // display grid set on each item gives 2cols of 2cols
+            }
+            @include respond-to(larger-screen){
+                min-width:15em;
+                display:grid;
+                grid-template-columns: 1fr 1fr;                                                     // display grid set on each item gives 2cols of 2cols
+            }
+        }
+        &__img{
+            background-repeat: no-repeat;
+            background-size: cover;
+            height:50vh;
+            display:block;
+            margin:0 auto;
+            max-width: 100%;
+            @include respond-to(mobile-portrait){
+                
+                background-size: cover;
+                
+                background-position:center;
+            }
+            @include respond-to(large-screen){
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                background-position:center;
+                background-size: cover;
+            }
+        }
+        
+        &__information{
+            display:flex;
+            color:white;
+            z-index: -1;
+            padding:2em;
+            margin-top:1em;
+            // margin-bottom:10em;
+            &--headline{
+                font-size: 1.5rem;
+                color:$color-primary-1;
+                @include respond-to(mobile-portrait){
+                    font-size:1.2rem;
+                }
+            }
+            &--item{
+                background-color:rgba($color-primary-3, 1);
+                border-radius: 15px;
+                margin:.4em auto;
+                padding:0em 1em;
+                box-shadow:0 .5rem 1rem rgba($color-black, .2);
+                @include respond-to(tablet-landscape){
+                    padding:0em 4em;
+                }
+                @include respond-to(large-screen){
+                    padding:0em 3em;
+                }
+                li{
+                    font-size:1.2rem;
+                }
+            }
+        }
+    }
+    &--title{
         color: $color-white;
         @include respond-to(mobile-landscape){
             font-size: 1rem;
@@ -11,33 +248,98 @@
         justify-content: center;
         padding:1.2em;
         text-align: left;
+        max-width: 45em;
+        margin:0 auto;
+        ol{
+            font-size:1rem;
+            
+            li{
+                @include respond-to(mobile-portrait){
+                    font-size: 1rem;
+                    padding:1.8em 0em;
+                    line-height: 1.6em;
+                }
+                @include respond-to(mobile-landscape){
+                    font-size: 1.2rem;
+                    padding:1em 0em;
+                }
+                @include respond-to(tablet-portrait){
+                    padding:1em 0em;
+                    font-size: 1rem;
+                }
+                @include respond-to(tablet-landscape-wide){
+                    padding:1em 0em;
+                    font-size: 1.5rem;
+                }
+                @include respond-to(large-screen){
+                    padding:1.8em 0em;
+                    font-size: 1.5rem;
+                }
+                @include respond-to(larger-screen){
+                    padding:1.8em 0em;
+                    font-size: 1.9rem;
+                }
+            }
+        }
+        
+        
+        @include respond-to(large-screens){
+            font-size: 1.5rem;
+        }
+        
     }
     &--ingrediants{
-        display:flex;
-        max-height:25vh;
+        margin:0 auto;
         word-wrap: normal;
-        margin-top:2em;
+        
         ul{
             @include respond-to(mobile-portrait){
-                font-size: 1rem;
+                font-size: 1.1rem;
                 flex-grow: 1;
-                
+                padding:0em 2em;
+                margin: 0 auto;
             }
             @include respond-to(mobile-landscape){
                 font-size:.9rem;
+                margin-top:2em;
+                padding:0em 2em;
             }
-            
-            display:flex;
-            flex-wrap: wrap;
-            flex-direction: column;
-            max-height: 25vh;
-            max-width:100%;
-        }
-        li{
-            margin:0em 1em ;
-            color:$color-white;
-            list-style: circle;
+            @include respond-to(large-screens){
+                max-height:25vh;
+            }
         }
         
+        li{
+            color:$color-white;
+            list-style: disc;
+            @include respond-to(mobile-portrait){
+                padding:1em .5em;
+                word-wrap: break-word;
+                max-width: 60vw;
+            }
+            @include respond-to(mobile-landscape){
+                padding:1em 0em;
+                font-size:1.2rem;
+                word-wrap: break-word;
+                max-width: 60vw;
+            }
+            @include respond-to(tablet-portrait){
+                font-size:1.2rem;
+                padding:1em 0em;
+                word-wrap: break-word;
+                max-width: 30vw;
+                margin-left:5em;
+            }
+            @include respond-to(tablet-landscape){
+                padding:1em 0em;
+                word-wrap: break-word;
+                max-width: 35vw;
+                
+            }
+            @include respond-to(tablet-landscape-wide){
+                font-size: 1.1rem;
+                color:$color-white;
+            }
+        }
     }
 }

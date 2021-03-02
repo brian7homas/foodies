@@ -1,9 +1,9 @@
-.recipe-archive{
+.recipe-container{
     display:block;
     color:white;
     z-index: -1;
-    margin-bottom:2em;
-    &__wrapper{ 
+    margin:0em  0em 2em 0em;
+    &__wrapper{    
         margin: 0 auto;
         max-width: 100%;
         display:grid;
@@ -31,18 +31,13 @@
             // width:90%; 
             // width:80%; 
             width:50%; 
-        }
-        
+        }        
         a{
-            
             h1{
-                font-size:1.3em;
+                font-size:1.2rem;
             }
         }
-        
-        
     }
-    
     &__item{
         border-radius: 15px;
         margin:.4em auto;
@@ -54,21 +49,58 @@
         display: flex;
         flex-direction: column;
         box-shadow:0 .5rem 1rem rgba($color-black, .2);
+        font-size:1rem;
+        transition: all .7s ease;
+    }
+    &__item:hover{
+        transition: all .5s;
+        transform: translateY(5px);
+        box-shadow:0 .5rem 10rem rgba($color-black, .1);
         
-        transition: all .5s ease;
-        &:hover{
-            transform: translateY(5px);
-            transition: all .5s ease;
-            
-            box-shadow:0 .5rem 10rem rgba($color-black, .1);
+    }
+    &__title{
+        color:$color-white;
+        font-weight:500;
+        margin-bottom:1em;
+        @include respond-to(mobile-portrait){
+            font-size: 1.5rem;
+        }
+        @include respond-to(mobile-landscape){
+            font-size: 1.4rem;
+        }
+        @include respond-to(tablet-portrait){
+            font-size: 1.3rem;
+        }
+        @include respond-to(large-screen){
+            font-size:1.3rem;
         }
     }
-    
-    
+    &__type,&__calories,&__carbs{
+        // display:flex;
+        justify-content: space-between;
+        font-weight:400;
+        color:$color-white;
+        transition: all 2s ease;
+        @include respond-to(mobile-portrait){
+            font-size:1rem;
+        }
+        @include respond-to(mobile-landscape){
+            font-size:1rem;
+        }
+        @include respond-to(tablet-portrait){
+            font-size:1rem;
+        }
+        @include respond-to(tablet-landscape){
+            font-size:1rem;
+        }
+        @include respond-to(large-screen){
+            font-size:1rem;
+            margin: auto 1em;
+        }
+    }
     p{
         color:$color-primary;
     }
-    
     img{
         max-width:100%
     }

@@ -3,6 +3,7 @@
 
 $break-1024: 64.063em;
 $break-1440: 90em;
+$break-769: 769px;
 $break-568: 35.5em;
 $break-480: 480px;
 
@@ -27,6 +28,13 @@ $break-480: 480px;
     @else if $media == tablet-landscape{
         @media screen 
             and (min-width: $break-568 + 1) 
+            and (orientation:landscape) 
+            { @content; }
+    }
+    
+    @else if $media == tablet-landscape-wide{
+        @media screen 
+            and (min-width: $break-769) 
             and (orientation:landscape) 
             { @content; }
     }

@@ -4,6 +4,7 @@
 
 @import './base/global';
 @import './base/type';
+@import './base/animations';
 
 
 
@@ -13,6 +14,11 @@
 @import './utils/flex-container';
 @import './utils/center';
 @import './utils/height-100';
+@import './utils/right-align';
+@import './utils/mr-1';
+@import './utils/pr-1';
+@import './utils/justify-between';
+@import './utils/row';
 
 @import './layout/search-bar';
 @import './layout/search-overlay';
@@ -23,8 +29,10 @@
 
 @import './pages/hero';
 @import './pages/page';
+@import './pages/recipe-container';
 @import './pages/recipe-archive';
 @import './pages/single-recipe';
+
 
 
 @import './componets/btn';
@@ -34,3 +42,4 @@
 @import './componets/nav-toggle';
 @import './componets/recipe-item';
 @import './componets/single';
+@import './componets/archive-link';

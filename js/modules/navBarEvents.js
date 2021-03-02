@@ -23,16 +23,16 @@ class navBarEvents{
             element.addEventListener("click", (e)=>{
                 e.preventDefault()
                 if(element.classList.contains('current')){
-                    console.log('same page')
+                    //console.log('same page')
                 }
                 // ifthe current page is set
                 if(this.current){
-                    console.log('this is the prev page: ' + this.current)
+                    //console.log('this is the prev page: ' + this.current)
                     this.current.classList.remove('current')
                 }
                 element.classList.add("current")
                 this.current = document.querySelector('.current')
-                console.log('this is the current page' + this.current)
+                //console.log('this is the current page' + this.current)
                 
                 
             })

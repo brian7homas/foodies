@@ -1,12 +1,7 @@
 .search{
-    
-    &__list{
-        
-    }
     &__list-item{
         display:flex;
         margin: .5em auto;
-        
     }
     display:block;
     &__img{
@@ -18,17 +13,23 @@
         margin-left:2em;
         display:flex;
         flex-direction: column;
+        font-weight: 300;
         a{
             color:$color-primary-4;
             text-decoration: none;
         }
         &--title{
             font-weight: 300;
+            @include respond-to(mobile-portrait){
+                font-size:1rem;
+            }
         }
         &--type{
             font-weight: 300;
         }
-        
+        &--carbs{
+            font-weight: 300;
+        }
     }
     
 }

@@ -7,11 +7,18 @@
         height: 2.5rem;
         width:2.5rem;
         border-radius:40px;
-        box-shadow: 0 1rem 2rem rgba($color-black, .4); 
+        box-shadow: 0 1rem .9rem rgba($color-black, .4); 
         color: $color-white;
+        transition:all .4s ease;
         @include respond-to(large-screen){
             height: 3.5rem;
             width:3.5rem;
+        }
+        &:hover{
+            box-shadow: 0 1.1rem 1.5rem rgba($color-black, .6); 
+        }
+        &:active{
+            box-shadow: 0 1rem 3rem rgba($color-black, .1); 
         }
     }
 }

@@ -3,6 +3,7 @@ class navbarToggle{
     constructor(){
         //get all nav menu items
         this.body = document.querySelector('body')
+        this.searchIcon = document.querySelector('.icon-basic-magnifier')
         this.navItems = document.querySelectorAll('.nav-menu__item')
         this.menuItemsArray = Array.prototype.slice.call(this.navItems)
         this.btn = document.querySelector('.btn__nav')
@@ -19,17 +20,17 @@ class navbarToggle{
     }
     windowEvent(){
         if(this.height == window.innerHeight){
-            console.log('same height')
+            //console.log('same height')
         }
         if(this.height != window.innerHeight && this.width == window.innerWidth){
             this.height = window.innerHeight
-            console.log('height changeing when width does not')
+            //console.log('height changeing when width does not')
         }else if(this.height != window.innerHeight && this.width != window.innerWidth){
             this.width == window.innerWidth
             if(this.width > 568){
-                console.log('remove navbar animation')
+                //console.log('remove navbar animation')
             }
-            console.log('changing ')
+            //console.log('changing ')
         }
     }
     events(){
@@ -44,7 +45,8 @@ class navbarToggle{
     // }
     slideUp(){
         this.toggle.from(this.navContainer, {display:'none'})
-                    .to(this.body, {overflow:'hidden'})
+                    .to(this.searchIcon, {display:'none'}, '<')
+                    .to(this.body, {overflow:'hidden'}, '<')
                     .fromTo(this.navContainer, { duration: .1,  opacity: 0}, { opacity: 1}, "<")
                     .from(this.menuItemsArray, .2, { autoAlpha: 0, duration: .3,   stagger: .2})
                     

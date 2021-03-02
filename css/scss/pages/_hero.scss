@@ -2,24 +2,23 @@
     display:block;
     color:$color-black;
     position: relative;
-    z-index: 2;
-    
-    
+    z-index: 2;    
     &__wrapper{
         margin:0 auto;
-        max-width:65em;
+        max-width:60em;
         margin-bottom:120px;
-        padding-top:3em;
-        p{
-            padding: .5em 2em;
-        }
+        
+        padding: 3em 2.5em 0em 2.5em;
     }
-    h1{
-        font-weight: 300;
-    }
+    
     &__header{
+        
         color: $color-white;
         font-size:1.6rem;
         margin:0 auto;
+        h1{
+            text-align: center;
+            
+        }
     }
 }

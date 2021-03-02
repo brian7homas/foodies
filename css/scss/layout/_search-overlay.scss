@@ -1,6 +1,8 @@
 .search-overlay{
     display:none;
+    
     &--active{
+        
         flex-direction: column;
         position: fixed;
         height:100vh;
@@ -8,25 +10,114 @@
         background-color: rgba($color-black, .75);
         width: 100vw;
         z-index: 2;
+        @include respond-to(mobile-portrait){
+            padding:2em 0em;
+        }
+        @include respond-to(tablet-portrait){
+            padding:0;
+        }
         &__results{
             padding:1em 2em;
             color:$color-white;
-            max-height:65vh;
-            overflow-y: scroll;
+            // max-height:65vh;
+            // overflow-y: scroll;
+            @include respond-to(mobile-portrait){
+                max-height:80vh;
+            }
+            @include respond-to(larger-screen){
+                display:flex;
+                flex-direction: column;
+                width: 100vw;
+                min-height:100vh; 
+                overflow-y:hidden;
+            }
         }
         &__wrapper{
             margin:0 auto;
-            height:50vh;
+            // height:50vh;
             display:flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            
+            @include respond-to(larger-screen){
+                justify-content: space-around;
+            }
         }
         &__headline{
             color:$color-white;
             font-size: 1.5rem;
+            @include respond-to(mobile-portrait){
+                margin:1.5em auto .51em auto
+            }
+            @include respond-to(mobile-landscape){
+                margin:2.75em auto .51em auto
+            }
+            
+            @include respond-to(tablet-portrait){
+                margin:3em auto .1em auto
+            }
+            @include respond-to(tablet-landscape){
+                margin:3em auto .1em auto
+            }
+            
         }
+    }   
+}
+#results{
+    position: absolute;
+    top:0;
+}
+#all-food-items{
+    color:green;
+}
+#all-drink-items{
+    color:red;
+    @include respond-to(larger-screen){
+        
     }
-    
-    
+}
+.food-container{
+    overflow-y:scroll;
+    height:40vh;
+    padding:.5em;
+    background-color: rgba(red, .5);
+    &__title{
+        padding: 0em .2em;
+        position:fixed;
+        background-color: rgba($color-black, .25);
+    }
+}
+.drink-container{
+    overflow-y:scroll;
+    height:40vh;
+    padding:.5em;
+    background-color: rgba(blue, .5);
+}
+.breakfast-container{
+    overflow-y:scroll;
+    height:40vh;
+    padding:.5em;
+    background-color: rgba(purple, .5);
+}
+.lunch-container{
+    overflow-y:scroll;
+    height:40vh;
+    padding:.5em;
+    background-color: rgba(white, .5);
+}
+.dinner-container{
+    overflow-y:scroll;
+    height:40vh;
+    padding:.5em;
+    background-color: rgba(green, .5);
+}
+.desserts-container{
+    overflow-y:scroll;
+    height:40vh;
+    padding:.5em;
+    background-color: rgba(yellow, .5);
+}
+#other{
+    color:purple;
 }
