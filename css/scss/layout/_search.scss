@@ -8,12 +8,18 @@
         background-size: contain;
         max-width: 45%;
         max-height:10em;
+        @include respond-to(mobile-portrait){
+            min-width:45%;
+        }
+        
     }
     &__description{
         margin-left:2em;
         display:flex;
         flex-direction: column;
         font-weight: 300;
+        max-width: 100%;
+        word-wrap: anywhere;
         a{
             color:$color-primary-4;
             text-decoration: none;

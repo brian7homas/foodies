@@ -1,8 +1,21 @@
 @import '../abstracts/media_queries/desktop';
 .mt-2{
-    margin-top:2em;
+    
+    @include respond-to(mobile-portrait){
+        height:auto;
+    }
     @include respond-to(tablet-portrait){
         min-width: 80vw;
+    }
+    @include respond-to(tablet-landscape){
+        margin-top:2em;
+        max-height:30vh;
+        overflow-y: scroll;
+    }
+    @include respond-to(tablet-landscape-wide){
+        margin-top:2em;
+        // max-height:40vh;
+        overflow-y: scroll;
     }
 }
 

@@ -19,9 +19,9 @@ class searchToggle{
         this.drinkResults = document.querySelector('#all-drink-items')
         this.generalInfo = document.querySelector('#other')
         
-        this.lunchContainer = document.querySelector('.lunch-container')
-        this.dinnerContainer = document.querySelector('.dinner-container')
-        this.dessertContainer = document.querySelector('.desserts-container')
+        this.lunchContainer = document.querySelector('#lunch')
+        this.dinnerContainer = document.querySelector('#dinner')
+        this.dessertContainer = document.querySelector('#desserts')
         //keep loading from restarting timeer
         this.previousValue
         //var used to select all input and textareas

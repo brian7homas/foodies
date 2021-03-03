@@ -12,16 +12,26 @@
         z-index: 2;
         @include respond-to(mobile-portrait){
             padding:2em 0em;
+            overflow-y: scroll;
+        }
+        @include respond-to(mobile-landscape){
+            padding:2em 0em;
+            overflow-y: scroll;
         }
         @include respond-to(tablet-portrait){
             padding:0;
             overflow-y: scroll;
         }
+        @include respond-to(tablet-landscape){
+            padding:0;
+            overflow-y: scroll;
+        }
+        @include respond-to(tablet-landscape-wide){
+            overflow:hidden;
+        }
         &__results{
             padding:1em 2em;
             color:$color-white;
-            // max-height:65vh;
-            // overflow-y: scroll;
             @include respond-to(mobile-portrait){
                 max-height:80vh;
             }
@@ -29,8 +39,9 @@
                 display:flex;
                 flex-direction: column;
                 width: 100vw;
-                min-height:100vh; 
+                max-height:100vh; 
                 overflow-y:hidden;
+                justify-content: space-around;
             }
         }
         &__wrapper{
@@ -67,65 +78,72 @@
 }
 #results{
     position: absolute;
-    top:0;
+    color:$color-white;
+    top:6em;    
+    margin-left:2em;
+}
+#other, #all-food-items, #all-drink-items{
     
 }
-#all-food-items{
-    color:green;
-    min-width: 100%;
-    
-}
-#all-drink-items{
-    color:red;
-    @include respond-to(larger-screen){
-        
-    }
+.food-container, .drink-container,
+.breakfast-container, .dinner-container,
+.lunch-container, .desserts-container{
+    border-radius: 10px;
 }
 .food-container{
     
-    height:40vh;
+    
     padding:.5em;
-    background-color: rgba(red, .5);
+    background-color: rgba($color-primary-1, .5);
     &__title{
         padding: 0em .2em;
         position:fixed;
         background-color: rgba($color-black, .85);
+        @include respond-to(mobile-portrait){
+            position:relative;
+        }
+        @include respond-to(mobile-landscape){
+            position:relative;
+        }
         @include respond-to(tablet-portrait){
             position:relative;
+        }
+        @include respond-to(tablet-landscape){
+            position:relative;
+        }
+        @include respond-to(tablet-landscape-wide){
+            position:fixed;
         }
     }
     
 }
 .drink-container{
     
-    height:40vh;
+    
     padding:.5em;
-    background-color: rgba(blue, .5);
+    background-color: rgba($color-primary-2, .5);
 }
 .breakfast-container{
     
-    height:40vh;
+    
     padding:.5em;
-    background-color: rgba(purple, .5);
+    background-color: rgba($color-primary-3, .5);
 }
 .lunch-container{
     
-    height:40vh;
+    
     padding:.5em;
-    background-color: rgba(white, .5);
+    background-color: rgba($color-primary-4, .5);
 }
 .dinner-container{
     
-    height:40vh;
+    
     padding:.5em;
-    background-color: rgba(green, .5);
+    background-color: rgba($color-primary-5, .5);
 }
 .desserts-container{
     
-    height:40vh;
+    
     padding:.5em;
-    background-color: rgba(yellow, .5);
-}
-#other{
-    color:purple;
+    background-color: rgba($color-primary-6, .5);
 }
