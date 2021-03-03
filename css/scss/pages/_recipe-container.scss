@@ -27,11 +27,11 @@
         @include respond-to(larger-screen){
             grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
         }
-        @include respond-to(medium-landscape-568){
-            // width:90%; 
-            // width:80%; 
-            width:50%; 
-        }        
+        // @include respond-to(medium-landscape-568){
+        //     // width:90%; 
+        //     // width:80%; 
+        //     width:50%; 
+        // }        
         a{
             h1{
                 font-size:1.2rem;
@@ -74,24 +74,54 @@
         @include respond-to(large-screen){
             font-size:1.3rem;
         }
+        
+        
     }
-    &__calories{
+    &__type{
+        
         &--title{
-            font-size:1rem;
+            // font-size:1rem;
         }
         &--value{
             color:$color-white;
-            min-width: 3.5em;
+            min-width: max-content;
+        }
+    }
+    &__calories{
+        &--title{
+            font-size: 1em;
+        }
+        &--value{
+            color:$color-white;
+            min-width: max-content;
             font-size: 1rem;
+            // margin-left:1em;
+        }
+    }
+    &__carbs{
+        &--title{
+            // font-size: 1em;
+        }
+        &--value{
+            color:$color-white;
+            min-width: max-content;
+            font-size: 1rem;
+            // margin-left:1em;
         }
     }
     &__type,&__calories,&__carbs{
         display:flex;
-        
+        min-width: 100%;
         justify-content: space-between;
         font-weight:400;
         color:$color-primary;
         transition: all 2s ease;
+        &--title{
+            margin-left:-.2em;
+        }
+        &--value{
+            // font-size:.7em;
+        }
         @include respond-to(mobile-portrait){
             font-size:1rem;
         }
@@ -106,11 +136,11 @@
         }
         @include respond-to(large-screen){
             font-size:1rem;
-            margin: auto 1em;
+            
         }
         @include respond-to(larger-screen){
-            font-size:1.3rem;
-            margin: auto 1em;
+            font-size:1rem;
+            
         }
     }
     // p{

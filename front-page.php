@@ -26,15 +26,46 @@
                                         <h1 class="recipe-container__title" >
                                             <?php echo the_title();?>
                                         </h1>
-                                        <h2 class="recipe-container__type" >
-                                            <p>Type: </p><?php echo get_field('type');?>
-                                        </h2>
-                                        <h4 class="recipe-container__calories" >
-                                            <p>Cals: </p><?php echo get_field('calories');?>
-                                        </h4>
-                                        <h4 class="recipe-container__carbs" >
-                                            <p>Carbs: </p><?php echo get_field('carbohoydrates');?>
-                                        </h4>
+                                        <div class="recipe-container__type">
+                                            <h4 class="recipe-container__type--title">
+                                                Type: 
+                                            </h4>
+                                            <p class="recipe-container__type--value">
+                                                <?php 
+                                                    if(get_field('type') != ''){
+                                                        echo get_field('type');    
+                                                    }else{
+                                                        echo "Add type";
+                                                    }
+                                                ?>
+                                            </p>
+                                        </div>
+                                        <div class="recipe-container__calories">
+                                            <h4 class="recipe-container__calories--title">
+                                                Cals: 
+                                            </h4>
+                                            <p class="recipe-container__calories--value">
+                                                <?php 
+                                                    if(get_field('calories') != ''){
+                                                        echo get_field('calories');    
+                                                    }else{
+                                                        echo "Add calories";
+                                                    }
+                                                ?>
+                                            </p>
+                                        </div>
+                                        <div class="recipe-container__carbs">
+                                            <h4 class="recipe-container__carbs--title">Carbs: </h4>
+                                                <p class="recipe-container__carbs--value">
+                                                    <?php 
+                                                        if(get_field('carboholhydrates') != ''){
+                                                            echo get_field('carboholhydrates');    
+                                                        }else{
+                                                            echo "Add carbs";
+                                                        }
+                                                    ?>
+                                                </p>
+                                        </div>
                                     </div>    
                                 </a>
                             <?php
