@@ -613,11 +613,11 @@ body {
     @media only screen and (min-width: 64.063em) {
       /* line 6, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/pages/_recipe-archive.scss */
       .recipe-archive__wrapper {
-        grid-template-columns: 1fr 1fr 1fr 1fr; } }
+        grid-template-columns: 1fr 1fr 1fr; } }
     @media only screen and (min-width: 65.063em) {
       /* line 6, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/pages/_recipe-archive.scss */
       .recipe-archive__wrapper {
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr; } }
+        grid-template-columns: 1fr 1fr 1fr; } }
     /* line 38, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/pages/_recipe-archive.scss */
     .recipe-archive__wrapper a h1 {
       font-size: 1.3em; }
