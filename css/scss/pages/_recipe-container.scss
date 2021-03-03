@@ -75,11 +75,22 @@
             font-size:1.3rem;
         }
     }
+    &__calories{
+        &--title{
+            font-size:1rem;
+        }
+        &--value{
+            color:$color-white;
+            min-width: 3.5em;
+            font-size: 1rem;
+        }
+    }
     &__type,&__calories,&__carbs{
-        // display:flex;
+        display:flex;
+        
         justify-content: space-between;
         font-weight:400;
-        color:$color-white;
+        color:$color-primary;
         transition: all 2s ease;
         @include respond-to(mobile-portrait){
             font-size:1rem;
@@ -97,17 +108,21 @@
             font-size:1rem;
             margin: auto 1em;
         }
+        @include respond-to(larger-screen){
+            font-size:1.3rem;
+            margin: auto 1em;
+        }
     }
-    p{
-        color:$color-primary;
-    }
+    // p{
+    //     color:$color-primary;
+    // }
     img{
         max-width:100%
     }
     
-    h3{
-        color:$color-primary-1;
-        text-align: center;
-    }
+    // h3{
+    //     color:$color-primary-1;
+    //     text-align: center;
+    // }
     
 }
