@@ -1,0 +1,8 @@
+@import '../abstracts/media_queries/desktop';
+.mt-2{
+    margin-top:2em;
+    @include respond-to(tablet-portrait){
+        min-width: 80vw;
+    }
+}
+

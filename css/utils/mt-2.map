@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "mt-2.css",
+	"sources": [
+		"../scss/utils/mt-2.scss",
+		"../scss/abstracts/media_queries/_desktop.scss"
+	],
+	"sourcesContent": [
+		"@import '../abstracts/media_queries/desktop';\n.mt-2{\n    margin-top:2em;\n    @include respond-to(tablet-portrait){\n        min-width: 80vw;\n    }\n}\n\n",
+		"/* min-width 1025px, large screens */\n/* min-width 1024px and max-width 1440px, use when QAing large screen-only issues */\n$break-1440: 1440px;\n$break-1024: 64.063em;\n$break-769: 769px;\n$break-568: 35.5em;\n$break-480: 480px;\n\n@mixin respond-to($media){\n    @if $media == larger-screen{\n        @media only screen \n            and (min-width: $break-1024 + 1) \n            { @content;} \n    }\n    @else if $media == large-screen{\n        @media only screen \n            and (min-width: $break-1024) \n            { @content; } \n    }\n    @else if $media == tablet-portrait{\n        @media screen \n            and (min-width: $break-480 + 1) \n            and (orientation:portrait) \n            { @content; }\n    }\n    @else if $media == tablet-landscape{\n        @media screen \n            and (min-width: $break-568 + 1) \n            and (orientation:landscape) \n            { @content; }\n    }\n    \n    @else if $media == tablet-landscape-wide{\n        @media screen \n            and (min-width: $break-769) \n            and (orientation:landscape) \n            { @content; }\n    }\n    \n    @else if $media == mobile-portrait{\n        @media screen \n            and (max-width: $break-480) \n            and (orientation:portrait) \n            { @content; }\n    }\n    @else if $media == mobile-landscape{\n        @media screen \n            and (max-width: $break-568) \n            and (orientation:landscape) \n            { @content; }\n    }\n}\n"
+	],
+	"names": [],
+	"mappings": "ACAA,qCAAqC;AACrC,oFAAoF;;ADApF,AAAA,KAAK,CAAA;EACD,UAAU,EAAC,GAAG,GAIjB;ECcO,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK,OAAO,WAAW,EAAE,QAAQ;;IDnBvE,AAAA,KAAK,CAAA;MAGG,SAAS,EAAE,IAAI,GAEtB"
+}

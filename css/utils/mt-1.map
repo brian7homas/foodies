@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "mt-1.css",
+	"sources": [
+		"../scss/utils/mt-1.scss"
+	],
+	"sourcesContent": [
+		".mt-2{\n    margin-top:2em;\n}"
+	],
+	"names": [],
+	"mappings": ";AAAA,AAAA,KAAK,CAAA;EACD,UAAU,EAAC,GAAG,GACjB"
+}

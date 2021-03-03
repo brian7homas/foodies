@@ -15,6 +15,7 @@
         }
         @include respond-to(tablet-portrait){
             padding:0;
+            overflow-y: scroll;
         }
         &__results{
             padding:1em 2em;
@@ -67,9 +68,12 @@
 #results{
     position: absolute;
     top:0;
+    
 }
 #all-food-items{
     color:green;
+    min-width: 100%;
+    
 }
 #all-drink-items{
     color:red;
@@ -78,42 +82,46 @@
     }
 }
 .food-container{
-    overflow-y:scroll;
+    
     height:40vh;
     padding:.5em;
     background-color: rgba(red, .5);
     &__title{
         padding: 0em .2em;
         position:fixed;
-        background-color: rgba($color-black, .25);
+        background-color: rgba($color-black, .85);
+        @include respond-to(tablet-portrait){
+            position:relative;
+        }
     }
+    
 }
 .drink-container{
-    overflow-y:scroll;
+    
     height:40vh;
     padding:.5em;
     background-color: rgba(blue, .5);
 }
 .breakfast-container{
-    overflow-y:scroll;
+    
     height:40vh;
     padding:.5em;
     background-color: rgba(purple, .5);
 }
 .lunch-container{
-    overflow-y:scroll;
+    
     height:40vh;
     padding:.5em;
     background-color: rgba(white, .5);
 }
 .dinner-container{
-    overflow-y:scroll;
+    
     height:40vh;
     padding:.5em;
     background-color: rgba(green, .5);
 }
 .desserts-container{
-    overflow-y:scroll;
+    
     height:40vh;
     padding:.5em;
     background-color: rgba(yellow, .5);

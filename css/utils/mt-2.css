@@ -1,0 +1,11 @@
+/* min-width 1025px, large screens */
+/* min-width 1024px and max-width 1440px, use when QAing large screen-only issues */
+/* line 2, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/utils/mt-2.scss */
+.mt-2 {
+  margin-top: 2em; }
+  @media screen and (min-width: 481px) and (orientation: portrait) {
+    /* line 2, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/utils/mt-2.scss */
+    .mt-2 {
+      min-width: 80vw; } }
+
+/*# sourceMappingURL=mt-2.css.map */

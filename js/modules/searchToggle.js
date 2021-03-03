@@ -253,20 +253,20 @@ class searchToggle{
                                 <div class="row">
                                     <div class="food-container">
                                         <h2 class="food-container__title">All food items</h2>
-                                        <div id='all-food-items'>
+                                        <div class="mt-2" id='all-food-items'>
                                         </div>
                                     </div>
                                     
                                     <div class="drink-container">
                                         <h2 class="food-container__title">All drink items</h2>
-                                        <div id='all-drink-items'>
+                                        <div class="mt-2" id='all-drink-items'>
                                         </div>
                                     </div>
                                     
                                         
                                     <div class="breakfast-container">
                                         <h2 class="food-container__title">BreakFast</h2>
-                                        <div id='other'>
+                                        <div class="mt-2" id='other'>
                                         </div>
                                     </div>
                                 </div>
@@ -274,19 +274,19 @@ class searchToggle{
                                 <div class="row">
                                     <div class="lunch-container">
                                         <h2 class="food-container__title">Lunch</h2>
-                                        <div id='lunch'>
+                                        <div class="mt-2" id='lunch'>
                                         </div>
                                     </div>
                                     
                                     <div class="dinner-container">
                                         <h2 class="food-container__title">dinner</h2>
-                                        <div id='dinner'>
+                                        <div class="mt-2" id='dinner'>
                                         </div>
                                     </div>
                                     
                                     <div class="desserts-container">
                                         <h2 class="food-container__title">desserts</h2>
-                                        <div id='desserts'>
+                                        <div class="mt-2" id='desserts'>
                                         </div>
                                     </div>
                                 </div>

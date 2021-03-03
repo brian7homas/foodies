@@ -3,4 +3,12 @@
     display:grid;
     grid-gap:.5em;
     grid-template-columns: 1fr 1fr 1fr;
+    
+    @include respond-to(tablet-portrait){
+        max-height: 100%;
+        display:grid;
+        grid-gap:.5em;
+        grid-template-columns: 1fr;
+    }
+    
 }
