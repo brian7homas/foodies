@@ -44,7 +44,16 @@ class RunAfterCompile {
 
 let cssConfig = {
   test: /\.css$/i,
-  use: ["css-loader?url=false", { loader: "postcss-loader", options: { plugins: postCSSPlugins } }]
+  use: [
+  {
+    loader:'css-loader',
+    options: {
+      sourceMap:true,
+      url: true
+    }
+  },{ loader: "postcss-loader", options: { postcssOptions : { plugins: postCSSPlugins} } }]
+  // use: ["css-loader?url=false", { loader: "postcss-loader", options: { postcssOptions : { plugins: postCSSPlugins} } }]
+
 }
 
 let config = {
@@ -55,6 +64,8 @@ let config = {
   module: {
     rules: [
       cssConfig,
+      
+      
       {
         test: /\.js$/,
         exclude: /(node_modules)/,
@@ -77,29 +88,40 @@ if (currentTask == "devFast") {
     publicPath: "http://localhost:3000/"
   }
   config.devServer = {
-    before: function (app, server) {
-      /*
-        If you want the browser to also perform a traditional refresh
-        after a save to a JS file you can modify the line directly
-        below this comment to look like this instead. I'm using this approach
-        instead of just disabling Hot Module Replacement beacuse this way our
-        CSS updates can still happen immediately without a page refresh.
+    // before: function (app, server) {
+    //   /*
+    //     If you want the browser to also perform a traditional refresh
+    //     after a save to a JS file you can modify the line directly
+    //     below this comment to look like this instead. I'm using this approach
+    //     instead of just disabling Hot Module Replacement beacuse this way our
+    //     CSS updates can still happen immediately without a page refresh.
 
-        If you're using a slower computer and the new bundle is not ready
-        by the time this is reloading the browser you can always just set the 
-        "hot" property a few lines below this to false instead of true. That
-        will work on all computers and the only trade off is the browser will
-        perform a traditional refresh even for CSS changes as well.
-        */
+    //     If you're using a slower computer and the new bundle is not ready
+    //     by the time this is reloading the browser you can always just set the 
+    //     "hot" property a few lines below this to false instead of true. That
+    //     will work on all computers and the only trade off is the browser will
+    //     perform a traditional refresh even for CSS changes as well.
+    //     */
 
-      // server._watch(["./**/*.php", "./**/*.js"])
-      server._watch(["./**/*.php", "!./functions.php"])
+    //   // server._watch(["./**/*.php", "./**/*.js"])
+    //   server._watch(["./**/*.php", "!./functions.php"])
+    // },
+    
+    // public: "http://localhost:3000",
+    // publicPath: "http://localhost:3000/",
+    // disableHostCheck: true,
+    // contentBase: path.join(__dirname),
+    // contentBasePublicPath: "http://localhost:3000/",
+    
+    static: {
+      publicPath: "http://localhost:3000/",
+      directory: path.join(__dirname),
     },
-    public: "http://localhost:3000",
-    publicPath: "http://localhost:3000/",
-    disableHostCheck: true,
-    contentBase: path.join(__dirname),
-    contentBasePublicPath: "http://localhost:3000/",
+    client: {
+      progress: true
+    },
+    bonjour: true, 
+    allowedHosts: "http://localhost:3000/",
     hot: true,
     port: 3000,
     headers: {
@@ -122,7 +144,12 @@ if (currentTask == "build" || currentTask == "buildWatch") {
   config.optimization = {
     splitChunks: { chunks: "all" }
   }
-  config.plugins.push(new CleanWebpackPlugin(), new MiniCssExtractPlugin({ filename: "styles.[chunkhash].css" }), new ManifestPlugin({ publicPath: "" }), new RunAfterCompile())
+  
+  config.plugins.push(
+    new CleanWebpackPlugin(), 
+    new MiniCssExtractPlugin({ filename: "styles.[chunkhash].css" }), 
+    new ManifestPlugin.WebpackManifestPlugin({ publicPath: "" }), 
+    new RunAfterCompile())
 }
 
 module.exports = config
