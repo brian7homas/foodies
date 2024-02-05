@@ -21,7 +21,7 @@ function pageHeader($page){ ?>
 function archiveLink($archive){ ?>
     <div class="archive-link--container right-align">
         <a class="archive-link" href="<?php echo get_post_type_archive_link($archive); ?>"> 
-            See all <?php if($archive = 'recipe'){echo 'normal';}else{echo $archive;}?> recipes
+          See all <?php echo get_post_type();?> recipes
         </a>
     </div>
 <?php }
