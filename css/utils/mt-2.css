@@ -1,26 +1,20 @@
 /* min-width 1025px, large screens */
 /* min-width 1024px and max-width 1440px, use when QAing large screen-only issues */
 @media screen and (max-width: 480px) and (orientation: portrait) {
-  /* line 2, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/utils/mt-2.scss */
   .mt-2 {
     height: auto; } }
 
 @media screen and (min-width: 481px) and (orientation: portrait) {
-  /* line 2, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/utils/mt-2.scss */
   .mt-2 {
     min-width: 80vw; } }
 
 @media screen and (min-width: 36.5em) and (orientation: landscape) {
-  /* line 2, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/utils/mt-2.scss */
   .mt-2 {
     margin-top: 2em;
     max-height: 30vh;
     overflow-y: scroll; } }
 
 @media screen and (min-width: 769px) and (orientation: landscape) {
-  /* line 2, ../../../../../Users/brianthomas/Local Sites/foodeez/app/public/wp-content/themes/recipes/css/scss/utils/mt-2.scss */
   .mt-2 {
     margin-top: 2em;
     overflow-y: scroll; } }
-
-/*# sourceMappingURL=mt-2.css.map */
