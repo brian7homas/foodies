@@ -17,6 +17,11 @@ $break-480: 480px;
             and (min-width: $break-1024) 
             { @content; } 
     }
+    @else if $media == medium-screen{
+      @media screen 
+          and (max-width: $break-769) 
+          { @content; }
+    }
     @else if $media == tablet-portrait{
         @media screen 
             and (min-width: $break-480 + 1) 

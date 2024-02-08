@@ -1,15 +1,16 @@
 .nav-toggle{
-    display: inline-block;
+    display: none;
     position: fixed;
-    top: 6em;
-    right: 0;
-    padding-right: 1em;
+    top: 7em;
+    right: 1.5em;
     z-index: 5;
+    @include respond-to(medium-screen){
+      display:inline-block;
+    }
     @include respond-to(large-screen){
-        padding-right:3em;
+      right: 1.5em;
     }
     button{
-        
         cursor: pointer;
     }
 }
