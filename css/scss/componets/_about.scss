@@ -1,0 +1,32 @@
+.about{
+  &__container{
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding:0 5em
+  }
+  &__image{
+    object-fit: contain;
+    max-height: 100%;
+    width:100%;
+    max-width: 25vw;
+    min-width:23rem;
+  }
+  &__text{
+    max-width: 25rem;
+    margin-left:8em;
+  }
+  &__header{
+    font-size:3rem;
+    margin:0 0 1.15em 0 ;
+  }
+  &__sub-header{
+    opacity:.5;
+    margin-bottom: 1.5em;
+  }
+  &__content{
+    font-size:1rem;
+    line-height:1.7rem;
+  }
+  
+}
