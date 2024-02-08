@@ -2,9 +2,16 @@
     get_header();
 ?>
 <div class="hero" data-barba="container" data-barba-namespace="front-page">
-  <div class="hero__wrapper">
+  <div 
+    class="hero__wrapper"
+    style="
+      background-image:url('<?php echo get_theme_file_uri('/images/apple-pie.jpg')?>');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center top;
+      ">
     <div class="hero__header">
-      <h1>All Recipes</h1>
+      <h1 class="hero__headline">Foodies</h1>
     </div>
   </div>
   <?php 
