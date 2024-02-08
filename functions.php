@@ -6,6 +6,18 @@ function reg_tag() {
 }
 add_action('init', 'reg_tag');
 
+function recipeCardList($postType, $arr){?>
+<div class="recipe-types__card">
+  <h1 class="recipe-types__card-header"><a href="<?php echo get_post_type_archive_link($postType)?>"><?php echo ucfirst($postType); ?></a></h1>
+  <ul>
+    <?php while($arr->have_posts()){
+      $arr->the_post();?>
+    <li class="recipe-types__card-recipe"><?php echo the_title();?></li>
+    <?php }?>
+  </ul>
+</div>
+<?php }
+
 function pageHeader($page){ ?>
 <div class="page__header">
   <h1 class="page__header--title">
