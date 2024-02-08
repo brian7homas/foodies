@@ -13,7 +13,6 @@ class navbarToggle{
         this.width = window.innerWidth
         this.height = window.innerHeight
         window.onresize = ()=>this.windowEvent()
-        this.slideUp()
         this.events()
         
         
