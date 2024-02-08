@@ -4,6 +4,7 @@
     justify-content: space-between;
     align-items: center;
     padding:1em 3.5em;
+    height: 6vh;
     &__wrapper{
         @include respond-to(mobile-portrait){
             margin:9em auto;
