@@ -24,7 +24,7 @@
   ?>
 <div class="front-page" data-barba="container" data-barba-namespace="front-page">
   <div class="hero__wrapper" style="
-      background-image:url('<?php echo get_theme_file_uri('/images/apple-pie.jpg')?>');
+      background-image:linear-gradient(to bottom, transparent, black), url('<?php echo get_theme_file_uri('/images/wings.jpg')?>');
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center top;
@@ -36,7 +36,7 @@
 
 
   <section class="about__container">
-    <img class="about__image" src="<?php echo get_theme_file_uri('/images/apple-pie.jpg');?>" alt="apple pie">
+    <img class="about__image" src="<?php echo get_theme_file_uri('/images/apple-pie.jpg');?>" alt="chicken wings">
     <div class="about__text">
       <h1 class="about__header">About Foodies</h1>
       <h1 class="about__sub-header">Web app built on Wordpress by Brian Thomas</h1>
