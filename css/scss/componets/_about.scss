@@ -3,7 +3,11 @@
     display:flex;
     justify-content: center;
     align-items: flex-start;
-    padding:0 5em
+    padding:0 5em;
+    @include respond-to(small-screen){
+      flex-direction: column;
+      align-items: center;
+    }
   }
   &__image{
     object-fit: contain;
@@ -11,22 +15,41 @@
     width:100%;
     max-width: 25vw;
     min-width:23rem;
+    
+    @include respond-to(medium-screen){
+      min-width:13rem;
+    }
+    @include respond-to(small-screen){
+      margin-bottom: 7em;
+    }
   }
   &__text{
     max-width: 25rem;
     margin-left:8em;
+    @include respond-to(medium-screen){
+      margin-left:0;
+    }
   }
   &__header{
     font-size:3rem;
     margin:0 0 1.15em 0 ;
+    @include respond-to(medium-screen){
+      font-size:1.75rem;
+    }
   }
   &__sub-header{
     opacity:.5;
     margin-bottom: 1.5em;
+    @include respond-to(medium-screen){
+      font-size:.75rem;
+    }
   }
   &__content{
     font-size:1rem;
     line-height:1.7rem;
+    @include respond-to(medium-screen){
+      font-size:.85rem;
+    }
   }
   
 }
