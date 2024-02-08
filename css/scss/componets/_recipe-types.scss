@@ -1,0 +1,54 @@
+.recipe-types {
+  &__container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 0 5em;
+    margin-top: 22em;
+    margin-bottom: 10em;
+  }
+
+  &__image {
+    object-fit: contain;
+    max-height: 100%;
+    width: 100%;
+    max-width: 25vw;
+    min-width: 23rem;
+  }
+
+  &__text {
+    max-width: 25rem;
+    margin-right: 8em;
+  }
+
+  &__header {
+    font-size: 3rem;
+    margin: 0 0 .95em 0;
+  }
+
+  &__sub-header {
+    opacity: .5;
+    margin-bottom: 1.5em;
+  }
+
+  &__content {
+    font-size: 1rem;
+    line-height: 1.7rem;
+  }
+
+  &__card {
+    margin: 2em 0;
+
+    &-header {
+      font-size: 1.5rem;
+    }
+
+    &-recipe {
+      padding-left: .4em;
+      font-style: italic;
+      font-weight: 200;
+      font-size: 1rem;
+      list-style-type: none;
+    }
+  }
+}
