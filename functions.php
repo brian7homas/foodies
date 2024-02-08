@@ -7,47 +7,47 @@ function reg_tag() {
 add_action('init', 'reg_tag');
 
 function pageHeader($page){ ?>
-  <div class="page__header">
-    <h1 class="page__header--title">
-      <?php echo $page['title']; ?>
-    </h1>
-    <br>
-    <small class="page__header--sub-title">
-      <?php echo $page['subTitle']; ?>
-    </small>
-  </div>
+<div class="page__header">
+  <h1 class="page__header--title">
+    <?php echo $page['title']; ?>
+  </h1>
+  <br>
+  <small class="page__header--sub-title">
+    <?php echo $page['subTitle']; ?>
+  </small>
+</div>
 <?php }
 
 function archiveLink($archive){ ?>
-    <div class="archive-link--container right-align">
-        <a class="archive-link" href="<?php echo get_post_type_archive_link($archive); ?>"> 
-          See all <?php echo get_post_type();?> recipes
-        </a>
-    </div>
+<div class="archive-link--container right-align">
+  <a class="archive-link" href="<?php echo get_post_type_archive_link($archive); ?>">
+    See all <?php echo get_post_type();?> recipes
+  </a>
+</div>
 <?php }
 function navbar(){?>
-    <nav class="nav-menu">
-          <ul class="nav-menu__wrapper">
-            <a href="<?php echo get_post_type_archive_link('recipe');?>" class="nav-menu__item">
-              <li>Normal Recipes</li>
-            </a>
-            <a href="<?php echo get_post_type_archive_link('keto');?>" class="nav-menu__item">
-              <li>Keto Recipes</li>
-            </a>
-            <a href="<?php echo get_post_type_archive_link('low-carb');?>" class="nav-menu__item">
-              <li>Low Carb Recipes</li>
-            </a>
-            <a href="<?php echo get_post_type_archive_link('drink');?>" class="nav-menu__item">
-              <li>Drink recipes</li>
-            </a>
-            <a href="<?php echo get_post_type_archive_link('dessert');?>" class="nav-menu__item">
-              <li>Dessert recipes</li>
-            </a>
-            <a href="<?php echo site_url('/')?>" class="nav-menu__item">
-              <li>Home</li>
-            </a>
-          </ul>
-        </nav>
+<nav class="nav-menu">
+  <ul class="nav-menu__wrapper">
+    <a href="<?php echo get_post_type_archive_link('recipe');?>" class="nav-menu__item">
+      <li>Normal Recipes</li>
+    </a>
+    <a href="<?php echo get_post_type_archive_link('keto');?>" class="nav-menu__item">
+      <li>Keto Recipes</li>
+    </a>
+    <a href="<?php echo get_post_type_archive_link('low-carb');?>" class="nav-menu__item">
+      <li>Low Carb Recipes</li>
+    </a>
+    <a href="<?php echo get_post_type_archive_link('drink');?>" class="nav-menu__item">
+      <li>Drink recipes</li>
+    </a>
+    <a href="<?php echo get_post_type_archive_link('dessert');?>" class="nav-menu__item">
+      <li>Dessert recipes</li>
+    </a>
+    <a href="<?php echo site_url('/')?>" class="nav-menu__item">
+      <li>Home</li>
+    </a>
+  </ul>
+</nav>
 <?php };
 function facts(){ 
   $Type = get_field('type');
@@ -65,56 +65,56 @@ function facts(){
   $Calcium = get_field('calcium');
 $Iron = get_field('iron');
   ?>
-  <div class="single-recipe--facts__3">  
-    <div class="single-recipe--fact-item">
-        <p>Type:</p>
-        <p><?php if($Type){echo $Type;}else{echo "No type selected";} ?></p>
-    </div>
-    <div class="single-recipe--fact-item">
-        <h3>Carbs:</h3>
-        <h3><?php if($Carbohoydrates){echo $Carbohoydrates;}else{echo "Not set";} ?></h3>
-    </div>
-    <div class="single-recipe--fact-item">
-        <h3>Calories:</h3>
-        <h3><?php if($Calories){echo $Calories;}else{echo "Not set";} ?></h3>
-    </div>
-    <div class="single-recipe--fact-item">
-        <h3>Fat:</h3>
-        <h3><?php if($Fat){echo $Fat;}else{echo "Not set";} ?></h3>
-    </div>
-    <div class="single-recipe--fact-item">
-        <h3>Saturated Fat:</h3>
-        <h3><?php if($Saturated_Fat){echo $Saturated_Fat;}else{echo "Not set";} ?></h3>
-    </div>
-    <div class="single-recipe--fact-item">
-        <h3>Sodium:</h3>
-        <h3><?php if($Sodium){echo $Sodium;}else{echo "Not set";} ?></h3>
-    </div>
-    <div class="single-recipe--fact-item">
-        <h3>Potassium:</h3>
-        <h3><?php if($Potassium){echo $Potassium;}else{echo "Not set";} ?></h3>
-    </div>
-    <div class="single-recipe--fact-item">
-        <h3>Fiber:</h3>
-        <h3><?php if($Fiber){echo $Fiber.'g';}else{echo "Not set";} ?></h3>
-    </div>
-    <div class="single-recipe--fact-item">
-        <h3>Suger:</h3>
-        <h3><?php if($Sugar){echo $Sugar.'g';}else{echo "Not set";} ?></h3>
-    </div>
-    <div class="single-recipe--fact-item">
-        <h3>Protien:</h3>
-        <h3><?php if($Protien){echo $Protien.'g';}else{echo "Not set";} ?></h3>
-    </div>
-    <div class="single-recipe--fact-item">
-        <h3>Calcium:</h3>
-        <h3><?php if($Calcium){echo $Calcium.'g';}else{echo "Not set";} ?></h3>
-    </div>
-    <div class="single-recipe--fact-item">
-        <h3>Iron:</h3>
-        <h3><?php if($Iron){echo $Iron.'mg';}else{echo "Not set";} ?></h3>
-    </div>
+<div class="single-recipe--facts__3">
+  <div class="single-recipe--fact-item">
+    <p>Type:</p>
+    <p><?php if($Type){echo $Type;}else{echo "No type selected";} ?></p>
   </div>
+  <div class="single-recipe--fact-item">
+    <h3>Carbs:</h3>
+    <h3><?php if($Carbohoydrates){echo $Carbohoydrates;}else{echo "Not set";} ?></h3>
+  </div>
+  <div class="single-recipe--fact-item">
+    <h3>Calories:</h3>
+    <h3><?php if($Calories){echo $Calories;}else{echo "Not set";} ?></h3>
+  </div>
+  <div class="single-recipe--fact-item">
+    <h3>Fat:</h3>
+    <h3><?php if($Fat){echo $Fat;}else{echo "Not set";} ?></h3>
+  </div>
+  <div class="single-recipe--fact-item">
+    <h3>Saturated Fat:</h3>
+    <h3><?php if($Saturated_Fat){echo $Saturated_Fat;}else{echo "Not set";} ?></h3>
+  </div>
+  <div class="single-recipe--fact-item">
+    <h3>Sodium:</h3>
+    <h3><?php if($Sodium){echo $Sodium;}else{echo "Not set";} ?></h3>
+  </div>
+  <div class="single-recipe--fact-item">
+    <h3>Potassium:</h3>
+    <h3><?php if($Potassium){echo $Potassium;}else{echo "Not set";} ?></h3>
+  </div>
+  <div class="single-recipe--fact-item">
+    <h3>Fiber:</h3>
+    <h3><?php if($Fiber){echo $Fiber.'g';}else{echo "Not set";} ?></h3>
+  </div>
+  <div class="single-recipe--fact-item">
+    <h3>Suger:</h3>
+    <h3><?php if($Sugar){echo $Sugar.'g';}else{echo "Not set";} ?></h3>
+  </div>
+  <div class="single-recipe--fact-item">
+    <h3>Protien:</h3>
+    <h3><?php if($Protien){echo $Protien.'g';}else{echo "Not set";} ?></h3>
+  </div>
+  <div class="single-recipe--fact-item">
+    <h3>Calcium:</h3>
+    <h3><?php if($Calcium){echo $Calcium.'g';}else{echo "Not set";} ?></h3>
+  </div>
+  <div class="single-recipe--fact-item">
+    <h3>Iron:</h3>
+    <h3><?php if($Iron){echo $Iron.'mg';}else{echo "Not set";} ?></h3>
+  </div>
+</div>
 <?php }
 
 
