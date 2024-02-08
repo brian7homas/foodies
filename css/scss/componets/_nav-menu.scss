@@ -1,93 +1,69 @@
 .nav-menu{
     display: flex;
-        background-color: rgba($color-black, .85);
-        flex-direction: column;
+    background-color: $color-white;
+    justify-content: space-between;
+    align-items: center;
+    padding:1em 3.5em;
     &__wrapper{
         @include respond-to(mobile-portrait){
             margin:9em auto;
-            height:50vh;
             
-            align-items: flex-end;
+            
+            align-items: center;
         }
         @include respond-to(mobile-landscape){
-            display:grid;
+            
             grid-template-columns: 1fr 1fr;
-            margin:0 auto;
-            height:80%;
+            
             gap: 1em;
             align-items: center;
         }
         @include respond-to(tablet-portrait){
-            display:grid;
+            
             grid-template-columns: 1fr ;
-            margin:0 auto;
-            height:85%;
+            
             row-gap: 0em;
-            align-items: baseline;
+            align-items: center;
         }
         @include respond-to(tablet-landscape){
-            display:grid;
+            
             grid-template-columns: 1fr 1fr;
-            margin:2em 3em;
-            height:60%;
-            column-gap: 2em;
+            
+            
         }
         @include respond-to(tablet-landscape-wide){
-            display:grid;
+            
             grid-template-columns: 1fr 1fr 1fr;
-            margin:1em;
-            height:60%;
-            column-gap: 2em;
-            align-items: flex-end;
+            
+            
+            align-items: center;
         }
         @include respond-to(large-screen){
-            display:grid;
             grid-template-columns: 1fr 1fr 1fr;
-            margin:auto;
-            height:35%;
-            column-gap: .5em;
-            align-items: center;
         }
         @include respond-to(larger-screen){
-            display:grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            margin:auto;
-            height:35%;
-            column-gap: .5em;
-            align-items: center;
+            display:flex;
+            
+            
         }
     }
-    a{
-        font-size: 2.2rem;
+    &__item{
+        color: $color-black;
+        display:block;
+        margin:.3em auto;
+        font-size: 1rem;
         position: relative; 
         text-decoration: none;
         list-style: none;
-        @include respond-to(mobile-portrait){
-            font-size:1.6rem;
-            line-height: 1.5em;
-        }
-        @include respond-to(mobile-landscape){
-            
-            font-size: 1.4rem;
-        }
-        @include respond-to(tablet-landscape){
-            font-size:1.3rem;
-        }
-        @include respond-to(tablet-landscape-wide){
-            font-size:1.9rem;
-        }
-        @include respond-to(large-screen){
-            font-size:2rem;
-        }
-        @include respond-to(larger-screen){
-            font-size:2.2rem;
-        }
+        margin:.3em 1em;
     }
-
-    &__item{
-        color: white;
-        display:block;
-        margin:1em auto;
+    &__logo{
+      font-size:1.3rem;
+      color:'red';
+      position: relative; 
+      text-decoration: none;
+      list-style: none;
+      margin:.3em 1em;
     }
 }
 a.current{

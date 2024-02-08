@@ -27,6 +27,11 @@ function archiveLink($archive){ ?>
 <?php }
 function navbar(){?>
 <nav class="nav-menu">
+  <h1>
+    <a class="nav-menu__logo" href="<?php echo site_url('/')?>">
+      foodies
+    </a>
+  </h1>
   <ul class="nav-menu__wrapper">
     <a href="<?php echo get_post_type_archive_link('recipe');?>" class="nav-menu__item">
       <li>Normal Recipes</li>
@@ -42,9 +47,6 @@ function navbar(){?>
     </a>
     <a href="<?php echo get_post_type_archive_link('dessert');?>" class="nav-menu__item">
       <li>Dessert recipes</li>
-    </a>
-    <a href="<?php echo site_url('/')?>" class="nav-menu__item">
-      <li>Home</li>
     </a>
   </ul>
 </nav>
