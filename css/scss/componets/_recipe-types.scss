@@ -6,34 +6,60 @@
     padding: 0 5em;
     margin-top: 22em;
     margin-bottom: 10em;
+    @include respond-to(small-screen){
+      flex-direction: column;
+      align-items: center;
+    }
   }
-
+  &__inner{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
   &__image {
     object-fit: contain;
     max-height: 100%;
     width: 100%;
     max-width: 25vw;
     min-width: 23rem;
+    @include respond-to(medium-screen){
+      min-width:13rem;
+    }
+    @include respond-to(small-screen){
+      margin-bottom: 7em;
+    }
   }
 
   &__text {
     max-width: 25rem;
     margin-right: 8em;
+    @include respond-to(small-screen){
+      margin-right: 0;
+    }
   }
 
   &__header {
     font-size: 3rem;
     margin: 0 0 .95em 0;
+    @include respond-to(medium-screen){
+      font-size:1.75rem;
+    }
   }
 
   &__sub-header {
     opacity: .5;
     margin-bottom: 1.5em;
+    @include respond-to(medium-screen){
+      font-size:.75rem;
+    }
   }
 
   &__content {
     font-size: 1rem;
     line-height: 1.7rem;
+    @include respond-to(medium-screen){
+      font-size:.85rem;
+    }
   }
 
   &__card {

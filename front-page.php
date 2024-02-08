@@ -49,10 +49,12 @@
   <section class="recipe-types__container">
     <div class="recipe-types__text">
       <h1 class="recipe-types__header">Our Recipes</h1>
-      <?php recipeCardList('keto', $recipeTypeKeto) ?>
-      <?php recipeCardList('recipe', $recipeTypeRecipe) ?>
-      <?php recipeCardList('low-carb', $recipeTypeLowCarb) ?>
-      <?php recipeCardList('drink', $recipeTypeDrink) ?>
+      <div class="recipe-types__inner">
+        <?php recipeCardList('keto', $recipeTypeKeto) ?>
+        <?php recipeCardList('recipe', $recipeTypeRecipe) ?>
+        <?php recipeCardList('low-carb', $recipeTypeLowCarb) ?>
+        <?php recipeCardList('drink', $recipeTypeDrink) ?>
+      </div>
     </div>
     <img class="recipe-types__image" src="<?php echo get_theme_file_uri('/images/cheese-cake.jpg');?>" alt="cheese cake">
   </section>
