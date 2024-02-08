@@ -3,12 +3,12 @@
     //NAVBAR BUTTON
     &__nav{
         border-color:transparent;
-        background-color: $color-primary-4;
+        background-color: $color-white;
         height: 2.5rem;
         width:2.5rem;
         border-radius:40px;
         box-shadow: 0 1rem .9rem rgba($color-black, .4); 
-        color: $color-white;
+        color: $color-black;
         transition:all .4s ease;
         @include respond-to(large-screen){
             height: 3.5rem;

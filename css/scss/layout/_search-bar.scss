@@ -22,9 +22,9 @@
     }
     span{
         position: fixed;
-        right:-.1em;    
+        right:.5em;    
         transform: scale(1.4);
-        top: 1rem;
+        top: .75rem;
         padding-right:1.2em;
         z-index: 3;    
         @include respond-to(large-screen){
@@ -34,12 +34,15 @@
     
     i{
         font-size: 1.4rem;;
-        background-image: linear-gradient(to right, $color-primary-4, $color-white);
+        background-image: linear-gradient(to right, $color-black, $color-black);
         -moz-background-clip: text;// background gets clipped exactly where the background is
         -webkit-background-clip: text;// background gets clipped exactly where the background is
         color: transparent;
         &:hover{
             color:$color-white;
+        }
+        @include respond-to(medium-screen){
+          background-image: linear-gradient(to right, $color-white, $color-white);
         }
     }
 }

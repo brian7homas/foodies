@@ -3,71 +3,52 @@
     background-color: $color-white;
     justify-content: space-between;
     align-items: center;
-    padding:1em 3.5em;
-    height: 6vh;
+    padding:1em 8em 1em 3.5em;
+    height: 5em;
     position:fixed;
     width:100%;
+    transition: background-color .2s;
+    color:$color-black;
+    @include respond-to(medium-screen){
+      background-color:rgba(0, 0, 0,.15);
+      color:$color-white;
+    }
     &__wrapper{
       display:flex;
-        @include respond-to(mobile-portrait){
-            // margin:9em auto;
-            
-            
-            align-items: center;
-        }
-        @include respond-to(mobile-landscape){
-            
-            grid-template-columns: 1fr 1fr;
-            
-            gap: 1em;
-            align-items: center;
-        }
-        @include respond-to(tablet-portrait){
-            
-            grid-template-columns: 1fr ;
-            
-            row-gap: 0em;
-            align-items: center;
-        }
-        @include respond-to(tablet-landscape){
-            
-            grid-template-columns: 1fr 1fr;
-            
-            
-        }
-        @include respond-to(tablet-landscape-wide){
-            
-            grid-template-columns: 1fr 1fr 1fr;
-            
-            
-            align-items: center;
+        @include respond-to(mobile-portrait){}
+        @include respond-to(mobile-landscape){}
+        @include respond-to(tablet-portrait){}
+        @include respond-to(tablet-landscape){}
+        @include respond-to(medium-screen){
+          display:none;
         }
         @include respond-to(large-screen){
-            grid-template-columns: 1fr 1fr 1fr;
+          
         }
         @include respond-to(larger-screen){
-            display:flex;
-            
-            
+          display:flex;
         }
     }
     &__item{
         color: $color-black;
         display:block;
-        margin:.3em auto;
-        font-size: 1rem;
+        font-size: .85rem;
         position: relative; 
         text-decoration: none;
         list-style: none;
-        margin:.3em 1em;
+        margin:.03em .5em;
+        
     }
     &__logo{
       font-size:1.3rem;
-      color:'red';
+      color:$color-black;
       position: relative; 
       text-decoration: none;
       list-style: none;
       margin:.3em 1em;
+      @include respond-to(medium-screen){
+        color:$color-white;
+      }
     }
 }
 a.current{
