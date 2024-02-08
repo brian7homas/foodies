@@ -122,7 +122,6 @@ function main_theme_files(){
     wp_enqueue_style('icons', get_theme_file_uri('/css/icons/styles.css'));
     wp_enqueue_script('Barba-core', 'https://unpkg.com/@barba/core', NULL, '1.0', true);
     wp_enqueue_script('GSAP-core', get_theme_file_uri('/js/gsap/gsap.min.js'), NULL, '1.0', true);
-    wp_enqueue_script('GSAP-draggable', get_theme_file_uri('/js/modules/Draggable.min.js'), NULL, '1.0', true);
     
     
     if (strstr($_SERVER['SERVER_NAME'], 'localhost')) {
